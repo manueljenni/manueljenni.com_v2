@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link href="customStyle.css" rel="stylesheet" />
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<nav class="navbar bg-white z-40">
+    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="about.html"><mark>About</mark></a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="travel.html">Travel</a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<body class="">
+    <div class="bg-gray-100 lg:flex h-full pt-12 lg:pt-0">
+        <div class="basis-3/5 space-y-12 p-12 my-auto px-12 lg:px-24">
+            <div class="">
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-5">
+                    <mark>About me</mark>
+                </h1>
+                <ol class="list-decimal list-outside ml-5 space-y-2">
+                    <li class="text-xl">
+                        I'm a student - I'm in my second year of my Bachelor of Laws at the
+                        <span class="underlined font-medium cursor-pointer"
+                            onclick="parent.open('https://www.unilu.ch')">University of Lucerne ↗</span>
+                        in Switzerland.
+                    </li>
+                    <li class="text-xl">
+                        I work as a back-end software developer for
+                        <span class="underlined font-medium cursor-pointer"
+                            onclick="parent.open('https://www.mileways.com')">Mileways ↗</span>, an amazing
+                        flight-tracking app.
+                    </li>
+                    <li class="text-xl">
+                        I also work as a freelancer: I do a lot of writing, translating and
+                        content management for various clients all over the world.
+                        <span class="underlined font-medium cursor-pointer" onclick="parent.open('hireme')">Hire me!
+                            ↗</span>
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-5">
+                    <mark>My passions</mark>
+                </h1>
+                <ol class="list-decimal list-outside ml-5 space-y-2">
+                    <li class="text-xl">
+                        I love to
+                        <span class="underlined font-medium cursor-pointer"
+                            onclick="window.location='travel'">travel</span>
+                        - whenever possible, I'm out there exploring the world! I'm
+                        currently trying out living as a digital nomad - travelling the
+                        world while working online.
+                    </li>
+                    <li class="text-xl">
+                        In my free time, I like to work on my own little coding projects
+                        (like this website, or an iOS app that I'm working on).
+                    </li>
+                    <li class="text-xl">
+                        I also enjoy playing the piano (even though I'm not very good at it)
+                        and
+                        <span class="underlined font-medium cursor-pointer"
+                            onclick="parent.open(window.location='sorry.html')">taking photos ↗</span>.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="basis-2/5 h-50" id="about-image">
+            <img src="img/profile.jpg" alt="" class=""/>
+        </div>
+        <script src="navbar.js" type="text/babel"></script>
+    </div>
+</body>
+<footer class="bg-white flex justify-center items-center align-middle h-36">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="customStyle.css" rel="stylesheet">
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+<nav class="navbar bg-white z-40">
+    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="index.html"><mark>Home</mark></a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="travel.html">Travel</a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<body class="bg-gray-100 h-screen">
+
+    <div class="sd:flex-col lg:flex w-full lg:h-3/4 justify-center items-center">
+        <div class="py-24 lg:py-0 lg:w-1/2 space-y-8 px-12 lg:px-24">
+            <h1 class="mt-12 lg:mt-0 text-center lg:text-left text-6xl text-neutral-800 font-regular leading-tight">Hey, I'm <span class="text-accentColor font-semibold">Manuel</span>.</h1>
+            <div class="space-y-2 lg:space-y-4 ">
+                <p class="text-center lg:text-left text-2xl text-neutral-600 leading-normal">I'm a <span class="hero-link">software developer</span>, aspiring attorney and travel addict.</p>
+                <p class="text-center lg:text-left text-2xl text-neutral-600 leading-normal">Check out some of my <span class="hero-link" onclick="window.location='articles.html'">thoughts & projects</span>, <span class="hero-link" onclick="window.location='photography.html'">photos</span> and <span class="hero-link" onclick="window.location='travel.html'">travels!</span></p>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-end lg:pr-24 lg:py-28 h-full">
+            <img src="img/nyc.jpg" alt="" class="h-full object-cover 
+            " id="hero-image">
+        </div>
+    </div>
+    <div class="bg-white pt-14" id="subhero-section">
+        <div class="mx-8 lg:mx-24 space-y-5 mb-12">
+            <h2 class="text-5xl text-center text-neutral-800 font-semibold mb-12">What do I do?</h2>
+        </div>
+
+        <div class="cards pt-8 pb-24 space-y-8 lg:space-y-0 sd:flex-col sd:mb- lg:flex lg:gap-8 lg:justify-center mx-8 lg:mx-24">
+            <div class="basis-1/3 text-center drop-shadow-md cursor-pointer hover"
+            onclick="window.location='about.html'">
+                <div class="mt-0 h-10 bg-accentColor rounded-t-lg flex justify-center items-center">
+                    <p class="text-xl uppercase">ABOUT ME</p>
+                </div>
+
+                <div class="h-48 bg-white rounded-b-lg flex justify-center items-center">
+                    <div class="p-8">
+                        <p class="text-xl text-neutral-800 mb-8">Who am I?<br>Get to know me here!</p>
+                        <i class="text-neutral-800 fas fa-user fa-2xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="basis-1/3 text-center drop-shadow-md cursor-pointer hover"
+            onclick="window.location='articles.html'">
+                <div class="lg:mt-0 h-10 bg-accentColor rounded-t-lg flex justify-center items-center">
+                    <p class="text-xl uppercase">Articles</p>
+                </div>
+
+                <div class="h-48 bg-white rounded-b-lg flex justify-center items-center">
+                    <div class="p-8">
+                        <p class="text-xl text-neutral-800 mb-8">Writing is like exercising - just for the brain.</p>
+                        <i class="text-neutral-800 fa-solid fa-newspaper fa-2xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="basis-1/3 text-center drop-shadow-md cursor-pointer hover"
+            onclick="window.location='hireme.html'">
+                <div class="lg:mt-0 h-10 bg-accentColor rounded-t-lg flex justify-center items-center">
+                    <p class="text-xl uppercase">Hire me!</p>
+                </div>
+
+                <div class="h-48 bg-white rounded-b-lg flex justify-center items-center">
+                    <div class="p-8">
+                        <p class="text-xl text-neutral-800 mb-8">I do software development, writing and translations.
+                        </p>
+                        <i class="text-neutral-800 fas fa-briefcase fa-2xl"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg-gray-100 my-12 py-6">
+        <div class="sd:flex-col lg:flex mx-4 lg:mx-12 lg:mx-24 space-y-12 lg:space-y-0 lg:space-x-10" id="articles">
+
+            <div class="w-full xl:w-1/2">
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-8"><mark>Featured Articles</mark></h1>
+                    <div id="featuredArticlesGenerated"></div>
+            </div>
+    
+            <div class="w-full xl:w-1/2">
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-8 cursor-pointer"><mark>Travel</mark></h1>
+                <div id="travelArticlesGenerated"></div>
+            </div>
+        </div>
+    </div>
+    <script src="fetchAPI.js" type="text/babel"></script>
+    <script src="navbar.js"></script>
+</body>
+<footer class="bg-white flex justify-center items-center h-36">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>

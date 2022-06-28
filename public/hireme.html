@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="customStyle.css" rel="stylesheet">
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<nav>
+    <div class="flex items-center justify-center space-x-5 my-5">
+        <a class="text-xl text-neutral-800" href="index.html">Home</a>
+        <a class="text-xl text-neutral-800" href="about.html">About</a>
+        <a class="text-xl text-neutral-800" href="hireme.html"><mark>Work</mark></a>
+        <a class="text-xl text-neutral-800" href="articles.html">Articles</a>
+        <a class="text-xl text-neutral-800" href="travel.html">Travel</a>
+    </div>
+</nav>
+
+<body>
+    <div class="bg-gray-100">
+        <div class="mx-4 lg:mx-24 space-y-4 pt-12">
+            <div class="flex flex-nowrap justify-between items-center mb-8">
+                <h1 class="text-4xl text-neutral-800 font-semibold">
+                    <mark>My Work Experience</mark>
+                </h1>
+                <button class="button" type="submit" onclick="window.open('CV.pdf')">
+                    <span>
+                        <i class="fa-solid fa fa-download mr-2"></i>Download my CV
+                    </span>
+                </button>
+            </div>
+        
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 sd:grid-cols-1 gap-x-8 gap-y-8 h-full w-full">
+
+                <div class="hover-darken cursor-pointer bg-neutral-400 basis-1/3 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="mileways_logo.svg" alt="">
+                </div>
+                
+                <div class="hover-darken cursor-pointer basis-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="trisa_logo.svg" alt="">
+                </div>
+
+                <div class="hover-darken cursor-pointer basis-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="upwork_logo.svg" alt="">
+                </div>
+
+                <div class="hover-darken cursor-pointer basis-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="ph_logo.svg" alt="">
+                </div>
+
+                <div class="hover-darken cursor-pointer basis-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="nsw_logo.svg" alt="">
+                </div>
+
+                <div class="hover-darken cursor-pointer basis-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="miraclemill_logo.svg" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="mx-4 lg:mx-24 space-y-8 py-12">
+            <div class="flex flex-nowrap justify-between items-center mb-8">
+                <h1 class="text-4xl text-neutral-800 font-semibold">
+                    <mark>Education</mark>
+                </h1>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 sd:grid-cols-1 gap-x-8 gap-y-8 h-full">
+                <div class="hover-darken cursor-pointer base-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="unilu_logo.svg" alt="">
+                </div>
+                <div class="hover-darken cursor-pointer base-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="kss_logo.svg" alt="">
+                </div>
+                <div class="hover-darken cursor-pointer base-1/3 bg-neutral-400 rounded-lg h-52" id="work-card">
+                    <img class="bg-white object-cover content-center rounded-lg mb-4 drop-shadow-md w-full h-full" src="sjf_logo.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="fetchAPI_articles.js" type="text/babel"></script>
+</body>
+<footer class="bg-white flex justify-center items-center align-middle h-36">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="customStyle.css" rel="stylesheet">
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<nav class="navbar bg-white z-40">
+    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="articles.html"><mark>Articles</mark></a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="travel.html">Travel</a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<body>
+    <div class="bg-gray-100 pt-12 lg:pt-0">
+        <div class="mx-4 lg:mx-24 space-y-8 py-12">
+            <div class="flex flex-nowrap justify-between items-center mb-8">
+                <div class="">
+                    <h1 class="text-4xl text-neutral-800 font-semibold">
+                        <mark>Articles</mark>
+                    </h1>
+                </div>
+                <div class="space-x-4">
+                    <span class="text-lg space-x-12 cursor-pointer button">
+                        <i class="fa-solid fa-filter mr-2"></i>Filter
+                    </span>
+                    <span class="text-lg space-x-12 cursor-pointer button">
+                        <i class="fa-solid fa-sort mr-2"></i>Order
+                    </span>
+                </div>
+            </div>
+            <div id="allArticlesGenerated"></div>
+        </div>
+    </div>
+    <script src="fetchAPI_articles.js" type="text/babel"></script>
+    <script src="navbar.js" type="text/babel"></script>
+</body>
+<footer class="bg-white flex justify-center items-center align-middle h-36">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>

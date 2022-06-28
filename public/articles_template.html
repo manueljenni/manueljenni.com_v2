@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link href="customStyle.css" rel="stylesheet" />
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+</head>
+<nav>
+    <div class="flex items-center justify-center space-x-5 my-5">
+        <a class="text-xl text-neutral-800" href="index.html">Home</a>
+        <a class="text-xl text-neutral-800" href="about.html">About</a>
+        <a class="text-xl text-neutral-800" href="hireme.html">Work</a>
+        <a class="text-xl text-neutral-800" href="articles.html"><mark>Articles</mark></a>
+        <a class="text-xl text-neutral-800" href="travel.html">Travel</a>
+    </div>
+</nav>
+<body>
+    <!--
+    <div class="mx-52 bg-gray-100 rounded-lg my-12 py-4">
+        <h1 class="text-5xl text-center text-neutral-800 font-semibold mb-4">Three Days in San Francisco</h1>
+        <h1 class="text-4xl text-center text-neutral-800">The Golden Gate Bridge on Thanskgiving</h1>
+    </div>
+    -->
+    <div class="flex justify-center items-center" id="article-hero-section">
+        <img src="/sf.jpeg" alt="">
+    </div>
+    <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
+        <div class="my-12 space-y-4">
+            <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-2">Three Days in San Francisco</h1>
+            <h1 class="text-4xl text-neutral-800 text-center">The Golden Gate Bridge on Thanskgiving</h1>
+            <div class="basis-1/2 flex justify-center space-x-4 pt-8">
+                <p class="button text-sm">#tripreport</p>
+                <p class="button text-sm">#sanfrancisco</p>
+                <p class="button text-sm">#travel</p>
+            </div>
+        </div>
+        <div class="bg-gray-100 rounded-lg" id="article-content">
+            <div class="p-8">
+                <p class="text-lg">After spending a week in Los Angeles, I wanted to explore another place on the West Coast before flying back to NYC, so I went to San Francisco for a few days. Here's a short report of my trip.</p>
+                <h1 class="text-3xl font-medium">Transport in SF</h1>
+                <p class="text-lg">So there I went! I flew into SFO at around noon, it's only about an hour flight time from LAX (navigating the queues at LAX takes longer than the actual flight itself). After arriving, I took the BART (the local rapid transit system) to the city center which was very convenient.
+                    Tip: Get the digital version of the Clipper card on your Apple Wallet, so you don't need to buy a ticket every time! You then can just tap your phone and use most of the public transport in SF. The trip from the airport to Downtown SF took about an hour and was only around $10, definitely a lot cheaper than taking an Uber!</p>
+            </div>
+            <img src="/sf.jpeg" alt="">
+        </div>
+    </div>
+
+    <script src="/createArticle.js"></script>
+</body>
+
+<footer class="bg-gray-100 flex justify-center items-center h-36 mt-16">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>

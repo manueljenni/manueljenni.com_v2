@@ -1,0 +1,157 @@
+'use strict';
+const { useState } = React;
+const { useEffect } = React;
+
+const e = React.createElement;
+
+function UpcomingFlightsTable(props) {
+
+  const [article, setArticle] = useState();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+      const getData = async () => {
+        try {
+          const response = await fetch(
+              'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights'
+          );
+          if (!response.ok) {
+            throw new Error(
+              `This is an HTTP error: The status is ${response.status}`
+            );
+          }
+          let actualData = await response.json();
+          setData(actualData);
+          setError(null);
+        } catch(err) {
+          setError(err.message);
+          setData(null);
+        } finally {
+          setLoading(false);
+        }  
+      }
+      getData()
+
+    }, [])
+      return (
+        <div className="table w-full border-collapse border" key="table1">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4">Date</div>
+              <div className="table-cell text-xl px-4 py-4">Origin</div>
+              <div className="table-cell text-xl px-4 py-4">Destination</div>
+              <div className="table-cell text-xl px-4 py-4">Airline</div>
+              <div className="table-cell text-xl px-4 py-4">Distance</div>
+              <div className="table-cell text-xl px-4 py-4">Duration</div>
+            </div>
+          </div>
+          <div className="table-row-group">
+          {data &&
+            data.map(flight => (
+            <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer">
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
+              <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
+              <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
+              <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br/><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.duration / 3600) * 100) / 100} h</div>
+            </div>
+            ))}
+          </div>
+        </div>
+      );
+}
+
+const domContainer = document.querySelector('#upcomingFlightsTable');
+const root = ReactDOM.createRoot(domContainer);
+root.render(<UpcomingFlightsTable />);
+
+function parseDate(input_date) {
+
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Hov", "Dec"
+  ];
+
+  var date = new Date(input_date);
+
+  return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+}
+
+function PastFlightsTable(props) {
+
+  const [article, setArticle] = useState();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+      const getData = async () => {
+        try {
+          const response = await fetch(
+            'https://damp-atoll-27311.herokuapp.com/api/flights/getAllPastFlights'
+          );
+          if (!response.ok) {
+            throw new Error(
+              `This is an HTTP error: The status is ${response.status}`
+            );
+          }
+          let actualData = await response.json();
+          setData(actualData);
+          setError(null);
+        } catch(err) {
+          setError(err.message);
+          setData(null);
+        } finally {
+          setLoading(false);
+        }  
+      }
+      getData()
+
+    }, [])
+      return (
+        <div className="table w-full border-collapse border" key="table2">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4">Date</div>
+              <div className="table-cell text-xl px-4 py-4">Origin</div>
+              <div className="table-cell text-xl px-4 py-4">Destination</div>
+              <div className="table-cell text-xl px-4 py-4">Airline</div>
+              <div className="table-cell text-xl px-4 py-4">Distance</div>
+              <div className="table-cell text-xl px-4 py-4">Duration</div>
+            </div>
+          </div>
+          <div className="table-row-group">
+          {data &&
+            data.map(flight => (
+            <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer">
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
+              <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
+              <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
+              <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br/><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
+              <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.duration / 3600) * 100) / 100} h</div>
+            </div>
+            ))}
+          </div>
+        </div>
+      );
+}
+
+const domContainer2 = document.querySelector('#pastFlightsTable');
+const root2 = ReactDOM.createRoot(domContainer2);
+root2.render(<PastFlightsTable />);
+
+function parseDate(input_date) {
+
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Hov", "Dec"
+  ];
+
+  var date = new Date(input_date);
+
+  return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+}
+
+

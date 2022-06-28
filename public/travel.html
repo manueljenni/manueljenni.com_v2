@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link href="customStyle.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/country-flag-emoji@latest/dist/country-flag-emoji.umd.min.js" type="module"></script>
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+    <script src="arc.js"></script>
+</head>
+<nav class="navbar bg-white z-40">
+    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="articles.html">Articles</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="travel.html"><mark>Travel</mark></a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<body>
+    <div class="bg-gray-100 h-full pt-12 lg:pt-0">
+        <div class="mx-4 lg:mx-24 space-y-8 py-12">
+            <div class="flex flex-nowrap justify-between items-center mb-8">
+                <div class="">
+                    <h1 class="text-4xl text-neutral-800 font-semibold">
+                        <mark>Travel</mark>
+                    </h1>
+                </div>
+                <div class="space-x-4 flex-col space-y-12">
+                    <button class="button" id="currentLocation" onclick="mapZoomCurrentLocation()">Current location:</button>
+                    <button class="button" id="currentLocation" onclick="mapZoomAll()">Zoom out</button>
+                </div>
+            </div>
+            <div class="">
+                <div id="map" class=""></div>
+            </div>
+            <div class="w-full py-12">
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
+                    <mark>Upcoming Flights</mark>
+                </h1>
+                <div id="upcomingFlightsTable"> </div>
+            </div>
+            <div class="w-full">
+                <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
+                    <mark>Past Flights</mark>
+                </h1>
+                <div id="pastFlightsTable"> </div>
+            </div>
+        </div>
+    </div>
+    <script src="flights.js" type="text/babel"></script>
+    <script src="navbar.js" type="text/babel"></script>
+    <script src="/react_mapbox.js" type="text/babel"></script>
+</body>
+<footer class="bg-white flex justify-center items-center align-middle h-36">
+    <p class="text-neutral-800">© 2021 Manuel Jenni. All rights reserved.</p>
+</footer>
