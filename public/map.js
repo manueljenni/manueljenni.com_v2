@@ -41,8 +41,6 @@ async function addMarkers() {
             var currentLocationButton = document.getElementById("currentLocation");
             currentLocationButton.textContent = "Current location: " + currentLocationName;
         }
-
-        console.log(currentLocationName);
     });
 
     // Fetch upcoming routes from API
@@ -54,7 +52,8 @@ async function addMarkers() {
     upcomingRoutes.forEach(element => {
         generateLine(
             [element.departureLongitude, element.departureLatitude],
-            [element.arrivalLongitude, element.arrivalLatitude]);
+            [element.arrivalLongitude, element.arrivalLatitude],
+            '#ffffff');
     });
 
     // Fetch past routes from API
@@ -67,7 +66,8 @@ async function addMarkers() {
         try {
             generateLine(
                 [element.departureLongitude, element.departureLatitude],
-                [element.arrivalLongitude, element.arrivalLatitude]);
+                [element.arrivalLongitude, element.arrivalLatitude],
+                '#99cddc');
         } catch (error) {
             // If there is an upcoming route
             // present that has already been a 
@@ -77,7 +77,7 @@ async function addMarkers() {
     });
 }
 
-function generateLine(coord_start, coord_end) {
+function generateLine(coord_start, coord_end, color) {
 
     var name = coord_start + coord_end;
     var start = { x: coord_start[0], y: coord_start[1] };
@@ -102,7 +102,7 @@ function generateLine(coord_start, coord_end) {
         'line-cap': 'round'
         },
         'paint': {
-        'line-color': '#a2e3f5',
+        'line-color': color,
         'line-width': 6
         }
       });
@@ -111,12 +111,12 @@ function generateLine(coord_start, coord_end) {
 function mapZoomAll() {
     var width = $( window ).width();
   
-  
     if(width < 1200) {
       // mobile
       map.flyTo({
-        center: [parseInt(mapbox_center[0]) +10, parseInt(mapbox_center[1]) +10],
-        zoom: 1,
+        //center: [parseInt(mapbox_center[0]) +10, parseInt(mapbox_center[1]) +10],
+        center: currentLocationLongLat,
+        zoom: 0.7,
         speed: 0.5,
         essential: true
       });
@@ -124,7 +124,7 @@ function mapZoomAll() {
       // desktop
       map.flyTo({
         center: mapbox_center,
-        zoom: 1.8,
+        zoom: 1.7,
         speed: 0.5,
         essential: true
       });
