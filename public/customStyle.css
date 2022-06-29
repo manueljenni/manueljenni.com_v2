@@ -2,6 +2,15 @@
 
 /* overrides default Tailwind styles */
 
+.marker {
+    height: 25px;
+    width: 25px;
+    background-color: #86c4d5;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: inline-block;
+}
+
 ::selection {
     background: #99cddc;
     color: white;
