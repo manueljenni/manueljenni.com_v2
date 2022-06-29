@@ -2,7 +2,6 @@
 // Token
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFudWVsbm9haGplbm5pIiwiYSI6ImNrdmk2N2NhazAyajgycG52Y2l5N2p5MGYifQ.ZHY3Gijy7ldNBUzPKlA2mg';
 var mapbox_center = [-10.16,30];
-var currentLocationLongLat = [8.5535, 47.4612];
 
 // generate Map
 const map = new mapboxgl.Map({
@@ -12,6 +11,10 @@ const map = new mapboxgl.Map({
     zoom: 1.8,
     projection: 'globe'
 });
+
+// Current location
+var currentLocationLongLat;
+var currentLocationName;
 
 addMarkers();
 
@@ -29,6 +32,17 @@ async function addMarkers() {
         new mapboxgl.Marker(el)
             .setLngLat([element.longitude, element.latitude])
             .addTo(map);
+
+        // Set current location
+        if (element.type == 1) {
+            currentLocationLongLat = [element.longitude, element.latitude];
+            currentLocationName = element.city + " (" + element.countryCode + ")";
+
+            var currentLocationButton = document.getElementById("currentLocation");
+            currentLocationButton.textContent = "Current location: " + currentLocationName;
+        }
+
+        console.log(currentLocationName);
     });
 
     // Fetch upcoming routes from API
@@ -38,7 +52,6 @@ async function addMarkers() {
 
     // Add upcoming routes to map
     upcomingRoutes.forEach(element => {
-        console.log(element);
         generateLine(
             [element.departureLongitude, element.departureLatitude],
             [element.arrivalLongitude, element.arrivalLatitude]);
@@ -89,7 +102,7 @@ function generateLine(coord_start, coord_end) {
         'line-cap': 'round'
         },
         'paint': {
-        'line-color': '#ffffff',
+        'line-color': '#a2e3f5',
         'line-width': 6
         }
       });
