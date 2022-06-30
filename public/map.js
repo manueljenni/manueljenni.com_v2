@@ -7,6 +7,7 @@ var mapbox_center = [-10.16,30];
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/manuelnoahjenni/ckvi68nsgiypn14s7uppns39h',
+    // default mapbox center
     center: [-10.16,30],
     zoom: 1.8,
     projection: 'globe'
@@ -34,12 +35,17 @@ async function addMarkers() {
             .addTo(map);
 
         // Set current location
+        // TODO: Implement proper "current location"
         if (element.type == 1) {
             currentLocationLongLat = [element.longitude, element.latitude];
             currentLocationName = element.city + " (" + element.countryCode + ")";
 
+            // Button to zooom into current location
             var currentLocationButton = document.getElementById("currentLocation");
             currentLocationButton.textContent = "Current location: " + currentLocationName;
+            currentLocationButton.setAttribute("onclick", "mapZoomPoint([" + currentLocationLongLat + "])");
+            
+            // Set current current location as mapbox center
             mapbox_center = currentLocationLongLat;
         }
     });
@@ -68,7 +74,7 @@ async function addMarkers() {
             generateLine(
                 [element.departureLongitude, element.departureLatitude],
                 [element.arrivalLongitude, element.arrivalLatitude],
-                'gray');
+                '#5f8894');
         } catch (error) {
             // If there is an upcoming route
             // present that has already been a 
@@ -85,7 +91,7 @@ function generateLine(coord_start, coord_end, color) {
     var end = { x: coord_end[0], y: coord_end[1] };
   
     var generator = new arc.GreatCircle(start, end, {'name': name});
-    var line = generator.Arc(10,{offset:20});
+    var line = generator.Arc(40,{offset:20});
   
     map.addSource(name, {
   
@@ -131,21 +137,22 @@ function mapZoomAll() {
       });
     }
   }
-  
-  function mapZoomCurrentLocation() {
-    // mobile
-    map.flyTo({
-      center: currentLocationLongLat,
-      zoom: 3.5,
-      speed: 0.5,
-      essential: true
-    });
-  }
 
+  // Zooms the map so two points fit perfectly
   function fitBounds(point1, point2) {
     console.log(point1)
     map.fitBounds([
       point1,
       point2
     ], {padding: 150});
+  }
+
+  // Zooms to a point
+  function mapZoomPoint(point) {
+    map.flyTo({
+      center: point,
+      zoom: 3.5,
+      speed: 0.5,
+      essential: true
+    });
   }
