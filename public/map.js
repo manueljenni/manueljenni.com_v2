@@ -30,8 +30,20 @@ async function addMarkers() {
         var el = document.createElement('div');
         el.className = 'marker';
 
+        // HTML for poup
+        var htmlPopup = '<h1 class="text-xl mb-1">'
+                      + element.city + " (" + element.countryCode + ")"
+                      + '</h1>'
+                      + '<p class="text-regular">'
+                      + element.name + " (" + element.iata + ")"
+                      + '</p>'
+        // Create popup
+        const popup = new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(htmlPopup);
+
         new mapboxgl.Marker(el)
             .setLngLat([element.longitude, element.latitude])
+            .setPopup(popup)
             .addTo(map);
 
         // Set current location
