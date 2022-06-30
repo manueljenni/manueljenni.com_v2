@@ -50,7 +50,7 @@ function UpcomingFlightsTable(props) {
           <div className="table-row-group">
           {data &&
             data.map(flight => (
-            <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer">
+            <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
               <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
               <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
               <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>

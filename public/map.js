@@ -40,6 +40,7 @@ async function addMarkers() {
 
             var currentLocationButton = document.getElementById("currentLocation");
             currentLocationButton.textContent = "Current location: " + currentLocationName;
+            mapbox_center = currentLocationLongLat;
         }
     });
 
@@ -67,7 +68,7 @@ async function addMarkers() {
             generateLine(
                 [element.departureLongitude, element.departureLatitude],
                 [element.arrivalLongitude, element.arrivalLatitude],
-                '#99cddc');
+                'gray');
         } catch (error) {
             // If there is an upcoming route
             // present that has already been a 
@@ -84,7 +85,7 @@ function generateLine(coord_start, coord_end, color) {
     var end = { x: coord_end[0], y: coord_end[1] };
   
     var generator = new arc.GreatCircle(start, end, {'name': name});
-    var line = generator.Arc(100,{offset:20});
+    var line = generator.Arc(10,{offset:20});
   
     map.addSource(name, {
   
@@ -103,7 +104,7 @@ function generateLine(coord_start, coord_end, color) {
         },
         'paint': {
         'line-color': color,
-        'line-width': 6
+        'line-width': 4
         }
       });
   }
@@ -139,4 +140,12 @@ function mapZoomAll() {
       speed: 0.5,
       essential: true
     });
+  }
+
+  function fitBounds(point1, point2) {
+    console.log(point1)
+    map.fitBounds([
+      point1,
+      point2
+    ], {padding: 150});
   }
