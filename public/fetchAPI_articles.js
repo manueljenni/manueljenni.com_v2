@@ -42,9 +42,9 @@ function AllArticles(props) {
              {loading &&
                 <div class=" grid space-y-7">
                     <p>Loading...</p>
-                    <div class="bg-gray-100 rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-gray-100 rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-gray-100 rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
                 </div>
              }
             {data &&

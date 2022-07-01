@@ -678,10 +678,6 @@ video {
   margin-top: 0px;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .flex {
   display: flex;
 }
@@ -750,6 +746,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .basis-3\/5 {
   flex-basis: 60%;
 }
@@ -772,6 +772,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.resize {
+  resize: both;
 }
 
 .list-outside {
