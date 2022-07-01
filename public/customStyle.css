@@ -2,6 +2,10 @@
 
 /* overrides default Tailwind styles */
 
+#mainSection {
+    min-height: 83vh !important;
+}
+
 .marker {
     height: 22px;
     width: 22px;
