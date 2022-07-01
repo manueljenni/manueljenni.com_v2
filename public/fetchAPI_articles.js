@@ -15,7 +15,7 @@ function AllArticles(props) {
         const getData = async () => {
           try {
             const response = await fetch(
-                'https://localhost:8080/api/articles/getAllArticlesSummary'
+                'https://damp-atoll-27311.herokuapp.com/api/articles/getAllArticlesSummary'
             );
             if (!response.ok) {
               throw new Error(
@@ -42,9 +42,6 @@ function AllArticles(props) {
              {loading &&
                 <div class=" grid space-y-7">
                     <p>Loading...</p>
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
                 </div>
              }
             {data &&

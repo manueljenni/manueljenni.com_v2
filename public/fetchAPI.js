@@ -15,7 +15,7 @@ function FeaturedArticles(props) {
         const getData = async () => {
           try {
             const response = await fetch(
-                'https://localhost:8080/api/articles/getArticleSummaryByCategory?category=featured'
+                'https://damp-atoll-27311.herokuapp.com/api/articles/getArticleSummaryByCategory?category=featured'
             );
             response.headers("Access-Control-Allow-Origin", "*")
             if (!response.ok) {
@@ -80,7 +80,7 @@ function TravelArticles(props) {
       const getData = async () => {
         try {
           const response = await fetch(
-              'https://localhost:8080/api/articles/getArticleSummaryByCategory?category=travel'
+              'https://damp-atoll-27311.herokuapp.com/api/articles/getArticleSummaryByCategory?category=travel'
           );
           if (!response.ok) {
             throw new Error(
