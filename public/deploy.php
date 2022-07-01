@@ -15,6 +15,7 @@
         'git submodule sync',
         'git submodule update',
         'git submodule status',
+	'git checkout --force "origin/master"'
     );
 
     // exec commands
@@ -25,6 +26,7 @@
         $output .= "<span style=\"color: #6BE234;\">\$</span><span style=\"color: #729FCF;\">{$command}\n</span><br />";
         $output .= htmlentities(trim($tmp)) . "\n<br /><br />";
     }
+	exec('git checkout --force "origin/master"');
 ?>
 
 <!DOCTYPE HTML>
