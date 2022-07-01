@@ -52,9 +52,16 @@ async function addMarkers() {
             currentLocationLongLat = [element.longitude, element.latitude];
             currentLocationName = element.city + " (" + element.countryCode + ")";
 
-            // Button to zooom into current location
+            // Only set current location on desktop
+            var width = $( window ).width();
             var currentLocationButton = document.getElementById("currentLocation");
-            currentLocationButton.textContent = "Current location: " + currentLocationName;
+
+            // Button to zooom into current location
+            if (width > 1200) {
+              currentLocationButton.textContent = "Current location: " + currentLocationName;
+            } 
+
+            // Set zoom to current location
             currentLocationButton.setAttribute("onclick", "mapZoomPoint([" + currentLocationLongLat + "])");
             
             // Set current current location as mapbox center
@@ -156,7 +163,7 @@ function mapZoomAll() {
     map.fitBounds([
       point1,
       point2
-    ], {padding: 150});
+    ], {padding: 100});
   }
 
   // Zooms to a point
