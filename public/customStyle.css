@@ -3,7 +3,7 @@
 /* overrides default Tailwind styles */
 
 #mainSection {
-    min-height: 83vh !important;
+    min-height: 90vh !important;
 }
 
 .marker {
@@ -42,7 +42,7 @@
 }
 
 .navbar {
-    min-height: 70px;
+    min-height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
