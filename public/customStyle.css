@@ -121,7 +121,7 @@
 @media (min-width: 1024px) {
     #hero-image {
         filter: drop-shadow(-1em 1em 0px #99cddc);
-        transition: filter 0.2s ease-in, top 0.2s ease-in;
+        transition: filter 0.2s ease-in;
     }
 
     #hero-image:hover {
@@ -216,13 +216,13 @@ mark {
 
 @media (min-width: 769px) {
     #article-hero-section img {
-        height: 50vh; 
+        height: 55vh;
     }
 }
 
 @media (max-width: 769px) {
     #article-hero-section img {
-        height: 30vh; 
+        height: 45vh; 
     }
 }
 
@@ -231,7 +231,6 @@ mark {
     object-fit: cover;
     object-position: center;
     filter: blur(0.0px);
-
 }
 
 #backgtest {
@@ -245,7 +244,7 @@ mark {
     padding-left: 6rem;
 }
 
-#article-content {
+#article-content .article-text {
     padding: 2rem;
 }
 
@@ -253,23 +252,11 @@ mark {
     margin-bottom: 1rem;
 }
 
-#article-content p {
+#article-content p:not(:last-child) {
     margin-bottom: 1rem;
 }
 
-#article-content div {
-    margin-bottom: 2rem;
-}
-
-#article-content .flex div img {
-    border-radius: 0;
-}
-
-#article-content .flex-col div img {
-    border-radius: 0;
-}
-
-#article-content img:last-child {
+#article-content img {
     border-bottom-right-radius: 0.5rem; /* 8px */
     border-bottom-left-radius: 0.5rem; /* 8px */
 }
