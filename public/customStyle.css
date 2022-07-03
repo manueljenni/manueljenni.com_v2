@@ -121,11 +121,11 @@
 @media (min-width: 1024px) {
     #hero-image {
         filter: drop-shadow(-1em 1em 0px #99cddc);
-        transition: filter 0.2s ease-in;
+
     }
 
     #hero-image:hover {
-        filter: drop-shadow(-1.2em 1.2em 0px #99cddc);
+
     }
 }
 
