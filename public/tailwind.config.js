@@ -3,7 +3,8 @@ module.exports = {
     '/src/**/*.html',
     '/src/**/*.js',
     '**/*.html',
-    './public/**/*.js'
+    './public/**/*.js',
+    '*.js'
   ],
   theme: {
     fontFamily: {
