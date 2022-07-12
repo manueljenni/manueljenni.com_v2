@@ -296,6 +296,19 @@ span.underlined {
     margin-right: auto;
 }
 
+/* Trips */
+
+.trip-image-container {
+    position: relative;
+}
+
+.trip-image-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
 /* Table */
 
 .table-row .table-cell:not(:last-child){

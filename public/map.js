@@ -110,7 +110,7 @@ function generateLine(coord_start, coord_end, color) {
     var end = { x: coord_end[0], y: coord_end[1] };
   
     var generator = new arc.GreatCircle(start, end, {'name': name});
-    var line = generator.Arc(40,{offset:20});
+    var line = generator.Arc(20,{offset:20});
   
     map.addSource(name, {
   
