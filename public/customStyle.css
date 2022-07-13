@@ -333,7 +333,7 @@ span.underlined {
 
   .modal-content {
     background-color: #fefefe;
-    margin: 50px auto; /* 15% from the top and centered */
+    margin: 120px auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 87%; /* Could be more or less, depending on screen size */

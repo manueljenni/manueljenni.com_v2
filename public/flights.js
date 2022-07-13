@@ -35,8 +35,6 @@ function UpcomingFlightsTable(props) {
   const [error, setError] = useState(null);
   const { height, width } = useWindowDimensions();
 
-  console.log(width);
-
   var tripId = props.tripId;
 
   if (tripId == undefined) {

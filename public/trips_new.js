@@ -6,7 +6,7 @@ const e = React.createElement;
 
 function ReactModal(props) {
 
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,11 +37,19 @@ function ReactModal(props) {
 
   }, [])
 
-  var openButton = document.getElementsByClassName("openModal")[0];
+  var openButton = document.getElementsByClassName("openModal");
 
-  openButton.addEventListener("click", function() {
-    setOpenModal(true);
+  Array.from(openButton).forEach((element, i) => {
+    element.addEventListener("click", function() {
+      setOpenModal(true);
+    });
   });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setOpenModal(false);
+    }
+  })
 
   return (
     <div>
@@ -49,14 +57,13 @@ function ReactModal(props) {
       <div className="modal rounded-lg" id="modal">
         <div className="modal-content">
           <div className="p-8">
-            <div className="flex space-x-4 mb-2">
-              <h1 className="text-3xl font-semibold">Asia Summer 2022</h1>
-              <span className="text-3xl text-neutral-800">&#183;</span>
+            <div className="sd:flex-col lg:flex lg:space-x-4 mb-2">
+              <h1 className="text-3xl font-semibold">Asia Summer 2022</h1>              
               <h1 className="text-3xl text-neutral-800">Aug 2022</h1>
             </div>
             <p className="text-2xl text-neutral-600">Singapore, Thailand, Indonesia</p>
           </div>
-          <div className="">
+          <div className="px-8">
             <h1 className="text-3xl text-neutral-800 font-semibold p-8">Flights</h1>
             <UpcomingFlightsTable />
           </div>
