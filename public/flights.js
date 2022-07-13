@@ -37,11 +37,19 @@ function UpcomingFlightsTable(props) {
 
   console.log(width);
 
+  var tripId = props.tripId;
+
+  if (tripId == undefined) {
+    tripId = '';
+  } else {
+    tripId = '/?tripId=' + props.tripId;
+  }
+
   useEffect(() => {
       const getData = async () => {
         try {
           const response = await fetch(
-              'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights'
+              'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights' + tripId
           );
           if (!response.ok) {
             throw new Error(
@@ -63,8 +71,7 @@ function UpcomingFlightsTable(props) {
 
     }, [])
 
-    // Handle table on mobile
-    if (width < 850) {
+    if (width < 1000) {
       return (
         <div className="table w-full border-collapse border" key="table1">
           <div className="table-header-group font-bold">
@@ -113,6 +120,7 @@ function UpcomingFlightsTable(props) {
           </div>
         );
     }
+    
 }
 
 const domContainer = document.querySelector('#upcomingFlightsTable');
@@ -163,7 +171,7 @@ function PastFlightsTable(props) {
 
     }, [])
     // Handle table on mobile
-    if (width < 850) {
+    if (width < 1000) {
       return (
         <div className="table w-full border-collapse border" key="table1">
           <div className="table-header-group font-bold">

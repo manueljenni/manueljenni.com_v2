@@ -14,6 +14,10 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
     <script src="arc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
+    integrity="sha512-MY2jfK3DBnVzdS2V8MXo5lRtr0mNRroUI9hoLVv2/yL3vrJTam3VzASuKQ96fLEpyYIT4a8o7YgtUs5lPjiLVQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script> 
 </head>
 <nav class="navbar bg-white z-40">
     <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
@@ -51,13 +55,15 @@
                 <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
                     <mark>Upcoming Trips</mark>
                 </h1>
+                <button class="openModal button">Open modal</button>
+                <div id="modal"></div>
                 <div id="upcomingTrips" class="grid md:grid-cols-3 xl:grid-cols-4 sd:grid-cols-1 gap-x-6 gap-y-12 h-full">
                     <div class="hover cursor-pointer" id="">
                         <div class="trip-image-container">
                             <img src="img/nyc_trip.png" alt="" class="rounded-lg mb-4 drop-shadow-md trip-image"/>
                             <p class="trip-image-text text-3xl font-semibold">Aug 2022</p>
                         </div>
-                        <h1 class="text-3xl mb-1 line-clamp-1 font-semibold">USA Trip 2022</h1>
+                        <h1 class="text-3xl mb-1 line-clamp-1 font-semibold">Asia Summer 2022</h1>
                         <p class="text-xl line-clamp-2">United States of America</p>
                     </div>
                     <div class="hover cursor-pointer" id="">
@@ -101,6 +107,7 @@
         </div>
     </div>
     <script src="flights.js" type="text/babel"></script>
+    <script src="trips_new.js" type="text/babel"></script>
     <script src="navbar.js" type="text/babel"></script>
     <script src="map.js" type="text/babel"></script>
 </body>

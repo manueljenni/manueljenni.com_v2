@@ -283,8 +283,7 @@ span.underlined {
     padding-right: 0.75rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    border-radius: 1rem;
-
+    border-radius: 9999px;
 }
 
 /* Map */
@@ -294,6 +293,15 @@ span.underlined {
     height: 35rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.mapboxgl-ctrl-attrib {
+    display: none !important;
+}
+
+.mapboxgl-ctrl-logo {
+    display: none !important;
 }
 
 /* Trips */
@@ -309,11 +317,28 @@ span.underlined {
     color: white;
 }
 
-/* Table */
+/* Trip modal */
 
-.table-row .table-cell:not(:last-child){
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
 
-}
+  .modal-content {
+    background-color: #fefefe;
+    margin: 50px auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 87%; /* Could be more or less, depending on screen size */
+    border-radius: 0.5rem; /* 8px */
+  }
 
 /* responsive br tag */
 
