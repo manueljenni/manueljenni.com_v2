@@ -45,6 +45,14 @@ function ReactModal(props) {
     });
   });
 
+  var closeButton = document.getElementsByClassName("closeModal");
+
+  Array.from(closeButton).forEach((element, i) => {
+    element.addEventListener("click", function() {
+      setOpenModal(false);
+    });
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       setOpenModal(false);
@@ -56,15 +64,22 @@ function ReactModal(props) {
       {openModal &&
       <div className="modal rounded-lg" id="modal">
         <div className="modal-content">
-          <div className="p-8">
-            <div className="sd:flex-col lg:flex lg:space-x-4 mb-2">
-              <h1 className="text-3xl font-semibold">Asia Summer 2022</h1>              
-              <h1 className="text-3xl text-neutral-800">Aug 2022</h1>
+          <div className="px-8 flex justify-between">
+            <div>
+              <div className="sd:flex-col lg:flex space-x-4 mb-2">
+                <h1 className="text-3xl font-semibold">Asia Summer 2022</h1>              
+                <h1 className="text-3xl text-neutral-800">Aug 2022</h1>
+              </div>
             </div>
-            <p className="text-2xl text-neutral-600">Singapore, Thailand, Indonesia</p>
+            <button className="button m-12 closeModal">Close</button>
           </div>
           <div className="px-8">
-            <h1 className="text-3xl text-neutral-800 font-semibold p-8">Flights</h1>
+            <p className="text-2xl text-neutral-600">Singapore, Thailand, Indonesia</p>
+            <p className="text-lg"><b>Dates:</b> Aug 04, 2022 - Aug 26, 2022</p>
+            <p className="text-lg"><b>Duration:</b> 26 days</p>
+          </div>
+          <div className="px-8">
+            <h1 className="text-3xl text-neutral-800 font-semibold">Flights</h1>
             <UpcomingFlightsTable />
           </div>
         </div> 
