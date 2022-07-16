@@ -237,6 +237,8 @@ function FlightsByTripTable(props) {
   const { height, width } = useWindowDimensions();
 
   var tripId = props.tripId;
+  // TESTING ONLY
+  tripId = '';
 
   useEffect(() => {
       const getData = async () => {
