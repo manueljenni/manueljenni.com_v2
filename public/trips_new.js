@@ -70,7 +70,7 @@ function ReactModal(props) {
       {openModal &&
       <div className="modal rounded-lg" id="modal">
         <div className="modal-content">
-          <div className="px-8 pt-4 flex justify-between">
+          <div className="lg:px-8 pt-2 lg:pt-4 flex justify-between">
             <div>
               <div className="sd:flex-col lg:flex lg:space-x-4 mb-2">
                 <h1 className="text-3xl font-semibold">Asia Summer 2022</h1>  
@@ -80,12 +80,12 @@ function ReactModal(props) {
             </div>
             <button className="button closeModal h-10 pl-4">Close</button>
           </div>
-          <div className="px-8 pb-8">
+          <div className="lg:px-8 pb-8">
             <p className="text-2xl text-neutral-600 mb-6">Singapore, Thailand, Indonesia</p>
             <p className="text-lg"><b>Dates:</b> Aug 04, 2022 - Aug 26, 2022</p>
             <p className="text-lg"><b>Duration:</b> 26 days</p>
           </div>
-          <div className="px-8 pb-4">
+          <div className="lg:px-8 pb-2 lg:pb-4">
             <h1 className="text-3xl text-neutral-800 font-semibold pb-6">Flights</h1>
             <FlightsByTripTable />
           </div>
