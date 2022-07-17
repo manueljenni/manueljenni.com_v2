@@ -306,6 +306,22 @@ span.underlined {
 
 /* Trips */
 
+.trip-image {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+@media (min-width: 750px) {
+    .trip-image {
+        width: 100%;
+        height: 22vh;
+        object-fit: cover;
+    }
+}
+
+
+
 .trip-image-container {
     position: relative;
 }
@@ -346,11 +362,11 @@ br.responsive {
     display: inline;
   }
   
-  @media (min-width: 769px) {
-    br.responsive {
-      display: none; 
-    }
-  }
+@media (min-width: 769px) {
+br.responsive {
+    display: none; 
+}
+}
 
 /* Work */
 
