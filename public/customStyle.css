@@ -308,18 +308,9 @@ span.underlined {
 
 .trip-image {
     width: 100%;
-    height: 30vh;
+    height: 66%;
     object-fit: cover;
 }
-
-@media (min-width: 750px) {
-    .trip-image {
-        width: 100%;
-        height: 22vh;
-        object-fit: cover;
-    }
-}
-
 
 
 .trip-image-container {
