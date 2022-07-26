@@ -51,7 +51,7 @@
             <div class="">
                 <div id="map" class=""></div>
             </div>
-            <div class="w-full py-12">
+            <div class="w-full pt-12">
                 <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
                     <mark>Upcoming Trips</mark>
                 </h1>
@@ -86,16 +86,28 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full py-12">
-                <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
-                    <mark>Upcoming Flights</mark>
-                </h1>
+            <div class="w-full pb-12">
+                <div class="sd:flex-col lg:flex justify-between mb-12">
+                    <div class="">
+                        <h1 class="text-4xl text-neutral-800 font-semibold">
+                            <mark>Upcoming Flights</mark>
+                        </h1>
+                    </div>
+                    <div class="flex-col space-x-4 pt-8 lg:pt-0">
+                        <button class="button upcomingFlightsButton"><span class="p-12">Hide</span></button>
+                    </div>
+                </div>
                 <div id="upcomingFlightsTable"> </div>
             </div>
             <div class="w-full">
-                <h1 class="text-4xl text-neutral-800 font-semibold mb-12">
-                    <mark>Past Flights</mark>
-                </h1>
+                <div class="sd:flex-col lg:flex justify-between mb-12">
+                    <h1 class="text-4xl text-neutral-800 font-semibold items-start">
+                        <mark>Past Flights</mark>
+                    </h1>
+                    <div class="flex-col space-x-4 pt-8 lg:pt-0">
+                        <button class="button pastFlightsButton"><span class="p-12">Hide</span></button>
+                    </div>
+                </div>
                 <div id="pastFlightsTable"> </div>
             </div>
         </div>

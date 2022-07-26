@@ -37,6 +37,7 @@ function ReactModal(props) {
 
   }, [])
 
+  // Handle modal opening
   var openButton = document.getElementsByClassName("openModal");
 
   Array.from(openButton).forEach((element, i) => {
@@ -45,6 +46,7 @@ function ReactModal(props) {
     });
   });
 
+  // Handle modal closing
   var closeButton = document.getElementsByClassName("closeModal");
 
   Array.from(closeButton).forEach((element, i) => {
@@ -53,6 +55,7 @@ function ReactModal(props) {
     });
   });
 
+  // Close modal when escape is pressed
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       setOpenModal(false);
