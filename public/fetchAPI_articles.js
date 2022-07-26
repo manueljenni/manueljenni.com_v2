@@ -46,7 +46,7 @@ function AllArticles(props) {
              }
             {data &&
             data.map(({image, title, summary, category, link}) => (
-              <div key={link} class="hover cursor-pointer" id="article">
+              <div key={link} class="hover cursor-pointer" id="article" onClick={() => window.location.href= ('articles/' + link)}>
               <img src={"../" + image} alt="" class="rounded-lg mb-4 drop-shadow-md"/>
               <h1 class="text-3xl mb-1 line-clamp-1">{title}</h1>
               <p class="text-lg line-clamp-2">{summary}</p>
@@ -60,48 +60,3 @@ function AllArticles(props) {
 const domContainer = document.querySelector('#allArticlesGenerated');
 const root = ReactDOM.createRoot(domContainer);
 root.render(<AllArticles />);
-
-/*
-<div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                <div class="hover cursor-pointer" id="article">
-                    <img src="/bkk.jpeg" alt="" class="rounded-lg mb-4 drop-shadow-md">
-                    <h1 class="text-3xl mb-1 line-clamp-1">Three Days in San Francisco. A very amazing experience test text</h1>
-                    <p class="text-lg line-clamp-2">Here's a short report of my three-day trip to San Francisco
-                        in November.</p>
-                </div>
-                */
