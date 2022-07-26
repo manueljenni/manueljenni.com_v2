@@ -63,9 +63,6 @@ async function addMarkers() {
 
             // Set zoom to current location
             currentLocationButton.setAttribute("onclick", "mapZoomPoint([" + currentLocationLongLat + "])");
-            
-            // Set current current location as mapbox center
-            mapbox_center = currentLocationLongLat;
         }
     });
 
@@ -140,8 +137,7 @@ function mapZoomAll() {
     if(width < 1200) {
       // mobile
       map.flyTo({
-        //center: [parseInt(mapbox_center[0]) +10, parseInt(mapbox_center[1]) +10],
-        center: currentLocationLongLat,
+        center: mapbox_center,
         zoom: 0.7,
         speed: 0.5,
         essential: true
@@ -149,7 +145,7 @@ function mapZoomAll() {
     } else {
       // desktop
       map.flyTo({
-        center: mapbox_center,
+        center: [8.5417,47.3769],
         zoom: 1.7,
         speed: 0.5,
         essential: true
