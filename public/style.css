@@ -721,12 +721,12 @@ video {
   height: 11rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-52 {
   height: 13rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-10 {
@@ -1039,6 +1039,10 @@ video {
   padding-top: 2rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1065,10 +1069,6 @@ video {
 
 .pb-8 {
   padding-bottom: 2rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .pb-6 {
