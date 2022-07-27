@@ -1039,6 +1039,10 @@ video {
   padding-top: 2rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1177,11 +1181,6 @@ video {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-accentColor {
-  --tw-text-opacity: 1;
-  color: rgb(134 196 213 / var(--tw-text-opacity));
 }
 
 .text-neutral-600 {
