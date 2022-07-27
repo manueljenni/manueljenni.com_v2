@@ -165,6 +165,7 @@
 }
 
 .underlined {
+    text-underline-offset: 0.2em;
     text-decoration: underline 3px #86CBD5;
      text-underline-position: under;
      text-decoration-line: underline;
@@ -173,6 +174,7 @@
     -webkit-text-decoration-line: underline;
     -webkit-text-decoration-color: #C1E2E8;
     -webkit-text-decoration-thickness: 3px;
+    cursor: pointer;
 }
 
 mark {
