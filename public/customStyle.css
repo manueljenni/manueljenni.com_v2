@@ -165,7 +165,6 @@
 }
 
 .underlined {
-    text-underline-offset: 0.2em;
     text-decoration: underline 3px #86CBD5;
      text-underline-position: under;
      text-decoration-line: underline;

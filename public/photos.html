@@ -4,6 +4,9 @@
     <link href="style.css" rel="stylesheet">
     <link href="customStyle.css" rel="stylesheet">
     <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>Photos</title>
 </head>
 <nav class="navbar bg-white z-40">
@@ -27,29 +30,11 @@
                 <mark>Photos</mark>
             </h1>
             <!-- Should I do this or an equally spaced square grid?? -> TODO -->
-            <div class="columns-1 md:columns-2 lg:columns-3 gap-0">
-                <img src="img/trip_karlsruhe.jpg" alt="">
-                <img src="img/nyc.jpg" alt="">
-                <img src="img/trip_london.jpg" alt="">
-                <img src="img/profile.jpg" alt="">
-                <img src="img/trip_karlsruhe.jpg" alt="">
-                <img src="img/trip_london.jpg" alt="">
-                <img src="img/trip_singapore.jpg" alt="">
-                <img src="img/nyc.jpg" alt="">
-                <img src="img/profile.jpg" alt="">
-                <img src="img/trip_karlsruhe.jpg" alt="">
-                <img src="img/nyc.jpg" alt="">
-                <img src="img/trip_london.jpg" alt="">
-                <img src="img/profile.jpg" alt="">
-                <img src="img/trip_karlsruhe.jpg" alt="">
-                <img src="img/trip_london.jpg" alt="">
-                <img src="img/trip_singapore.jpg" alt="">
-                <img src="img/nyc.jpg" alt="">
-                <img src="img/profile.jpg" alt="">
-            </div>
+            <div id="photoGrid"></div>
         </div>
     </div>
     <script src="navbar.js" type="text/babel"></script>
+    <script src="photos.js" type="text/babel"></script>
 </body>
 <footer class="bg-white flex justify-center items-center align-middle h-36">
     <p class="text-neutral-800">&#169; 2021 Manuel Jenni. All rights reserved.</p>
