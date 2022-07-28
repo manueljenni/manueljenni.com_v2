@@ -596,10 +596,6 @@ video {
   z-index: 40;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1014,10 +1010,6 @@ video {
   padding: 2rem;
 }
 
-.p-0 {
-  padding: 0px;
-}
-
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1066,16 +1058,16 @@ video {
   padding-top: 2rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pl-4 {
