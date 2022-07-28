@@ -85,8 +85,11 @@ function ReactModal(props) {
           </div>
           <div className="lg:px-8 pb-8">
             <p className="text-2xl text-neutral-600 mb-6">Singapore, Thailand, Indonesia</p>
-            <p className="text-lg"><b>Dates:</b> Aug 04, 2022 - Aug 26, 2022</p>
-            <p className="text-lg"><b>Duration:</b> 22 days</p>
+            <div>
+              <p className="text-lg"><b>Dates: </b>Aug 04, 2022 - Aug 26, 2022</p>
+              <p className="text-lg mb-4"><b>Duration: </b>22 days</p>
+              <p className="text-lg"><b>Reason for trip: </b>I'm finally going back home! I'll meet up with all of my friends and get to see some new places as well.</p>
+            </div>
           </div>
           <div className="lg:px-8 pb-2 lg:pb-4">
             <h1 className="text-3xl text-neutral-800 font-semibold pb-6">Flights</h1>

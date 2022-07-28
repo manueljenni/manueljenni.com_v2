@@ -90,8 +90,8 @@ function UpcomingFlightsTable(props) {
             {data &&
                 data.map(flight => (
                 <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})</div>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})</div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
                 </div>
                 ))}
             </div>
@@ -114,7 +114,7 @@ function UpcomingFlightsTable(props) {
               {data &&
                 data.map(flight => (
                 <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
                   <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
                   <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
                   <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
@@ -234,9 +234,9 @@ function PastFlightsTable(props) {
             <div className="table-row-group">
             {data &&
                 data.map(flight => (
-                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})</div>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})</div>
+                  <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
                 </div>
                 ))}
             </div>
@@ -259,7 +259,7 @@ function PastFlightsTable(props) {
               {data && 
                 data.map(flight => (
                 <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
                   <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
                   <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
                   <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
@@ -317,6 +317,29 @@ function parseDate(input_date) {
   return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 }
 
+function getHoursOfDateFormatted(input_date) {
+  var date = new Date(input_date);
+  return date.getHours().toString().padStart(2,'0') + ':' + date.getMinutes().toString().padStart(2,'0');
+}
+
+function getDepartureArrivalTime(start_date, end_date) {
+  var start = new Date(start_date);
+  var end = new Date(end_date);
+
+  
+  var startDate = new Date(start).setHours(0, 0, 0, 0);
+  var endDate = new Date(end).setHours(0, 0, 0, 0);
+
+  if (startDate < endDate) {
+    // Overnight flight
+    return (
+      <span>{getHoursOfDateFormatted(start)} - {getHoursOfDateFormatted(end)}<sup>+1</sup></span>
+    )
+  } else {
+    return getHoursOfDateFormatted(start) + ' - ' + getHoursOfDateFormatted(end);
+  }
+}
+
 
 function FlightsByTripTable(props) {
 
@@ -368,9 +391,9 @@ function FlightsByTripTable(props) {
           <div className="table-row-group">
           {data &&
               data.map(flight => (
-              <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200">
-                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})</div>
-                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})</div>
+                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
               </div>
               ))}
           </div>
@@ -393,7 +416,7 @@ function FlightsByTripTable(props) {
             {data &&
               data.map(flight => (
               <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200">
-                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}</div>
+                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
                 <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
                 <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
                 <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>

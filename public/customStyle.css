@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* overrides default Tailwind styles */
-
 #mainSection {
     min-height: 92vh !important;
 }
+
+sub, sup { font-size: 65%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.1em; vertical-align: super;}
+sub { bottom: -0.15em; vertical-align: sub;}
 
 .marker {
     height: 22px;
@@ -159,8 +161,8 @@
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
-    text-decoration-color: #525252;
-    color: #525252;
+    text-decoration-color: #3F76B5;
+    color: #3F76B5;
     /*color: #3F76B5;*/
 }
 
