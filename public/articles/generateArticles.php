@@ -17,7 +17,7 @@ function writeArticles() {
         $image_html = '';
         if ($value->image != "") {
             $image_html = '<div class="flex justify-center items-center" id="article-hero-section">'
-                . '<img src="' . $value->image . '" alt="">'
+                . '<img src="../img/articles/' . $value->image . '" alt="">'
                 . '</div>';
         }
 
@@ -32,7 +32,7 @@ function writeArticles() {
 
         $filename = $value->link . ".html";
         $file = fopen($filename, "w") or die("Cant open file Error");
-
+        $articleContent = html_entity_decode($value->content);
         $fileContent = <<<EOT
         <!DOCTYPE html>
         <head>
@@ -71,7 +71,7 @@ function writeArticles() {
                     </div>
                 </div>
                 <div class="bg-gray-100 rounded-lg" id="article-content">
-                    {$value->content}
+                    {$articleContent}
                 </div>
             </div>
             <script src="../navbar.js" type="text/babel"></script>
