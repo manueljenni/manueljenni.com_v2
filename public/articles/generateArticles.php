@@ -17,7 +17,7 @@ function writeArticles() {
         $image_html = '';
         if ($value->image != "") {
             $image_html = '<div class="flex justify-center items-center" id="article-hero-section">'
-                . '<img src="' . $value->image . '" alt="">'
+                . '<img src="../img/articles/' . $value->image . '" alt="">'
                 . '</div>';
         }
 
