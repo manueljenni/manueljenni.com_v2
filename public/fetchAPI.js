@@ -39,23 +39,23 @@ function FeaturedArticles(props) {
       }, [])
       return (
         
-        <div class="space-y-7">
+        <div className="space-y-7">
              {loading && 
-                <div class="space-y-7">
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                    <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                <div className="space-y-7">
+                    <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                    <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                    <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
                 </div>
              }
             {data &&
             data.map(({image, title, summary, category, link}) => (
-                <div key={link} class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
-                <img class="object-cover rounded-l-lg w-2/5" src={"../img/articles/" + image}/>
-                <div class="w-3/5 flex items-center">
-                    <div class="space-y-3 px-6">
-                        <p class="text-sm text-highlightColor-400 uppercase">{category}</p>
-                        <p class="text-2.5xl font-semibold font-medium text-neutral-800 leading-7 line-clamp-2">{title}</p>
-                        <p class="text-base leading-5 line-clamp-3">{summary}</p>
+                <div key={link} className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
+                <img className="object-cover rounded-l-lg w-2/5" src={"img/articles/" + image}/>
+                <div className="w-3/5 flex items-center">
+                    <div className="space-y-3 px-6">
+                        <p className="text-sm text-highlightColor-400 uppercase">{category}</p>
+                        <p className="text-2.5xl font-semibold font-medium text-neutral-800 leading-7 line-clamp-2">{title}</p>
+                        <p className="text-base leading-5 line-clamp-3">{summary}</p>
                     </div>
                 </div>
                </div>
@@ -101,25 +101,26 @@ function TravelArticles(props) {
       getData()
 
     }, [])
+
     return (
       
-      <div class="space-y-7">
+      <div className="space-y-7">
            {loading && 
-              <div class="space-y-7">
-                  <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                  <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
-                  <div class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+              <div className="space-y-7">
+                  <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                  <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
+                  <div className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover"></div>
               </div>
            }
           {data &&
           data.map(({image, title, summary, category, link}) => (
-              <div key={link} class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
-              <img class="object-cover rounded-l-lg w-2/5" src={"../img/articles/" + image}/>
-              <div class="w-3/5 flex items-center">
-                  <div class="space-y-3 px-6">
-                      <p class="text-sm text-highlightColor-400 uppercase">{category}</p>
-                      <p class="text-2.5xl font-semibold font-medium text-neutral-800 leading-7 line-clamp-2">{title}</p>
-                      <p class="text-base leading-5 line-clamp-3">{summary}</p>
+              <div key={link} className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
+              <img className="object-cover rounded-l-lg w-2/5" src={"img/articles/" + image}/>
+              <div className="w-3/5 flex items-center">
+                  <div className="space-y-3 px-6">
+                      <p className="text-sm text-highlightColor-400 uppercase">{category}</p>
+                      <p className="text-2.5xl font-semibold font-medium text-neutral-800 leading-7 line-clamp-2">{title}</p>
+                      <p className="text-base leading-5 line-clamp-3">{summary}</p>
                   </div>
               </div>
              </div>
