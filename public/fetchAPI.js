@@ -50,7 +50,7 @@ function FeaturedArticles(props) {
             {data &&
             data.map(({image, title, summary, category, link}) => (
                 <div key={link} class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
-                <img class="object-cover rounded-l-lg w-2/5" src={"../" + image}/>
+                <img class="object-cover rounded-l-lg w-2/5" src={"../img/articles/" + image}/>
                 <div class="w-3/5 flex items-center">
                     <div class="space-y-3 px-6">
                         <p class="text-sm text-highlightColor-400 uppercase">{category}</p>
@@ -114,7 +114,7 @@ function TravelArticles(props) {
           {data &&
           data.map(({image, title, summary, category, link}) => (
               <div key={link} class="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
-              <img class="object-cover rounded-l-lg w-2/5" src={"../" + image}/>
+              <img class="object-cover rounded-l-lg w-2/5" src={"../img/articles/" + image}/>
               <div class="w-3/5 flex items-center">
                   <div class="space-y-3 px-6">
                       <p class="text-sm text-highlightColor-400 uppercase">{category}</p>
