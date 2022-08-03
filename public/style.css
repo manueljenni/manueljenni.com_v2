@@ -596,6 +596,10 @@ video {
   z-index: 40;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1010,6 +1014,10 @@ video {
   padding: 2rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1112,11 +1120,6 @@ video {
   line-height: 2.5rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1135,6 +1138,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-2\.5xl {
