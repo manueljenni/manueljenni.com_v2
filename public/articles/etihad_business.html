@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <link href="../customStyle.css" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Articles</title>
+</head>
+<nav class="navbar bg-white z-40">
+    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="articles.html"><mark>Articles</mark></a></li>
+        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="travel.html">Travel</a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+<body>
+    <div class="flex justify-center items-center" id="article-hero-section">
+        <img src="../img/articles/ey_business.jpg" alt="">
+    </div>
+    <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
+        <!--    TAGS    -->
+        <div class="my-12 space-y-4">
+            <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-2">Etihad Business Class: Amazing!</h1>
+            <h1 class="text-4xl text-neutral-800 text-center">Zurich to Singapore</h1>
+            <div class="basis-1/2 flex justify-center space-x-4 pt-8">
+                <p class="button text-sm">#flight</p>
+                <p class="button text-sm">#etihad</p>
+                <p class="button text-sm">#review</p>
+            </div>
+        </div>
+        <div class="bg-gray-100 rounded-lg" id="article-content">
+            <div class="article-text">
+                <div>
+                    <p>On my way from Zurich to Singapore, I got to fly Etihad Airways' Business Class. Here's a short report of my experience. Etihad has been my go-to airline for years and I've always enjoyed flying with them, even in Economy, so I obviously liked their Business Class as well.</p>
+                    <h1>Leaving Zurich</h1>
+                    <p>Unfortunately, I didn't really get to enjoy the benefits of Business Class at Zurich Airport - I was meeting a friend and I almost missed my flight. But not too bad - as an Etihad Guest member I'm already getting access to the Business Lounge and Priority Boarding & Check-in etc. even on Economy flights. And meeting friends is always worth it - there are plenty of free drinks on the plane!</p>
+                    <h1>Flying from Zurich to Abu Dhabi</h1>
+                    <p>After boarding the flight, I immediately got a welcome drink - a glass of Champagne (and it was actually Champagne, not sparkling wine!) which tasted wonderful but also resulted in me already being drunk before take-off. There was some slight delay because of some airspace restrictions but the drink made up for it. The flight wasn't too full, so the cabin crew had a lot of time and provided excellent service.</p>
+                    <div class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+                        <div style="flex: calc(3024/4032);">
+                            <img src="../img/articles/ey_business_champagne_sanitary_bag.jpg" alt="">
+                            <sub><i>The Acqua di Parma sanitary kit + champagne.</i></sub>
+                        </div>
+                        <div style="flex: calc(1920/1080);">
+                            <video width="100%" height="100%" controls>
+                                <source>
+                            </video src="../img/articles/ey_business_mid_flight.mov" type="video/mp4">
+                            <sub><i>Mid flight</i></sub>
+                        </div>
+                    </div>
+                    <h3>The seat (11C)</h3>
+                    <p>Now let's move on to the most important part of any flight: The seat! This was definitely one of the best things about this flight - I was finally able to fly without leg pain! The seat was extremely spacious and very comfortable, with plenty of room in all directions. The seats are in a 1-2-1 configuration, with some seats being better than others. The best seats are the front-facing window seats because they provide the most privacy, but the other seats are good too. On my first flight, I had a backward-facing window seat. There is a small cover that provides some privacy, but people will still be able to see you directly from the aisle (that would not be the case in front-facing window seats).<br/>There is a small storage unit on the right of the seat with plenty of room on top where I put my iPad when I wasn't using it. There is also a large countertop in front of that with tons of space to place any items you want -  I put my water and laptop there, and my phone that was charging. The table was also really nice, it was pretty big. I was able to comfortably get some work done on my 14" MacBook. The table is also pretty cool because it can be moved back and forth, so you can actually leave the seat without retracting the table. </p>
+                    <div class="sd:flex-col sd:space-x-0 lg:space-x-4 lg:flex">
+                        <div style="flex: calc(3024/4032);">
+                            <img src="../img/articles/ey_business_selfie.jpg" alt="">
+                            <sub><i>I really like the lamp next to the seat, so calming!</i></sub>
+                        </div>
+                        <div style="flex: calc(2039/1326);">
+                            <img src="../img/articles/ey_business.jpg" alt="">
+                            <sub><i>The table is perfect to get some work done, and the area on the right side provides plenty of space to put stuff.</i></sub>
+                        </div>
+                    </div>
+                    <h3>The food</h3>
+                    <p>The food was great too. First, I had a Gin Tonic with some nuts. Then, as a starter I had an arabic mezze platter with some really delicious hummus, fresh bread and some veggies, paired with a glass of Australian Chardonnay. The vegetarian main course were some arancini (fried balls filled with Mozzarella cheese) with some vegetables. For dessert, I had a chocolate lava cake, my favourite!<br/>The food was yummy, fresh and also looked great. It food was served quickly - I never had to wait for long until the next course was ready.</p>
+                    <h3>Sleeping</h3>
+                    <p>After having eaten, I continued working for a bit and then tried out the bed configuration of the seat. The seat fullly reclines into a flat bed with plenty of room - I could fully extend my legs, something I did not expect because I'm like 190 cm tall. But the seat-turned-bed was very comfortable, so I just slept for a while and then we already landed in Abu Dhabi.</p>
+                    <p>Etihad also provided a toiletry bag with a toothbrush and toothpaste, and some face wipes </p>
+                    <h1>Layover in Abu Dhabi</h1>
+                    <p>My layover in Abu Dhabi was short, less than three hours. Abu Dhabi Airport is very small and there isn't much to do, so I headed straight to the Business Lounge as usual. It's located in Terminal 3, the same terminal my flight to Singapore was departing from. The lounge is pretty big but always busy, it's quite hard to find a quiet spot (so sleeping is not really possible). There is a good selection of different food - they have the same hummus and veggies I had as a starter on my first flight. There is also a buffet with hot food, lots of coffee machines and two bars where you can get any drink you can think of. I also went to have a shower - there's nothing better than a hot shower after an exhausting flight. There are multiple showers in different places, and they're all equipped with a toilet, sink and a hairdryer, as well as shampoo, conditioner etc.</p>
+                    <h1>Flying from Abu Dhabi to Singapore</h1>
+                    <p>After a short layover, I boarded the flight to Singapore. It was absolutely packed! Both Economy and Business were completely full - there even was a pretty big queue at the priority boarding entrance. Nonetheless, the cabin crew was really nice and everybody got a drink pre-departure. I opted for another glass of Champagne and then fell asleep - and then we were already airborne!</p>
+                    <h3>The seat (11F) & more food & the rest of the flight</h3>
+                    <p>This time, I had a middle seat - meaning I was next to another person, but there is a divider in between those seats that can be pulled up. I actually liked that seat too, it felt like there was more space than in the window seats. I'm not sure if that's actually true or if it was just an illusion, but those seats are definitely good as well.</p>
+                    <p>Pretty soon after takeoff, there was another round of food. Interestingly, some of the items on the menu were the same as on my previous flight, while some were different. I had a soup as a starter and then some pasta as the main dish and of course another Gin Tonic. The food was really hot which was great because I was freezing a little bit, and it tasted great too.</p>
+                    <p>After eating, I watched a movie and then turned my seat into a bed. I got a couple hours of good sleep before the cabin crew woke everyone up for some breakfast. I had a glass of orange juice as we made our way into Changi airport - welcome to Singapore! :-)</p>
+                    <h1>Etihad vs. other carriers</h1>
+                    <p>I really enjoyed Etihad's Business Class. However, how does it compare to products of other major carriers in the market?</p>
+                    <p>Obviously, Etihad is no match for Qatar's Qsuite - arguably the best Business Class in the world. With Etihad, you're unable to completely close off your seat with a divider (basically a door) like you can with Qatar. Also, the beds on the Qsuite are bigger, the blankets are nicer etc. If you're travelling with your partner, you can convert your two seats to a double bed on Qatar, something that's not possible with Etihad. The quality of service and food is probably pretty similar, no complaints. Also, Etihad Biz is often way cheaper than Qatar's Qsuite, so that's definitely something to consider.</p>
+                    <p>It's a different story when comparing Etihad to Emirates - I'd pick EY over EK any day. Why? The quality of the Emirates' Business Class greatly varies depending on their aircraft. The A380 is great - but they don't fly it on all routes! On some planes, the EK Business reminds me of Korean Air's old planes - the seat doesn't even fully recline into a flatbed. With Etihad, their Business Class is pretty much the same across all their aircrafts. Service and food are great on both airlines, so I'd only fly Emirates if your chosen route is being flown on A380s.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/createArticle.js"></script>
+    <script src="navbar.js" type="text/babel"></script>
+</body>
+
+<footer class="bg-gray-100 flex justify-center items-center h-36 mt-16">
+    <p class="text-neutral-800">&#169; 2021 Manuel Jenni. All rights reserved.</p>
+</footer>
