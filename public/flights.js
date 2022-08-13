@@ -79,7 +79,7 @@ function UpcomingFlightsTable(props) {
     if (showUpcomingTable == true) {
       if (width < 1000) {
         return (
-          <div className="table w-full border-collapse border upcomingFlightsButton cursor-pointer" key="table1_mobile">
+          <div className="table w-full border-collapse border cursor-pointer" key="table1_mobile">
             <div className="table-header-group font-bold">
               <div className="table-row bg-accentColor">
                 <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
@@ -99,7 +99,7 @@ function UpcomingFlightsTable(props) {
         );
       } else {
           return (
-            <div className="table w-full border-collapse border upcomingFlightsButton cursor-pointer" key="table1_desktop">
+            <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop">
               <div className="table-header-group font-bold">
                 <div className="table-row bg-accentColor">
                   <div className="table-cell text-xl px-4 py-4">Date</div>
@@ -129,7 +129,7 @@ function UpcomingFlightsTable(props) {
     } else {
       if (width < 1000) {
         return (
-          <div className="table w-full border-collapse border pastFlightsButton cursor-pointer" key="table2_mobile_hidden">
+          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
           <div className="table-header-group font-bold">
               <div className="table-row bg-gray-200">
                 <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
@@ -140,7 +140,7 @@ function UpcomingFlightsTable(props) {
         )
       } else {
         return (
-          <div className="table w-full border-collapse border upcomingFlightsButton cursor-pointer" key="table1_desktop_hidden">
+          <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop_hidden">
           <div className="table-header-group font-bold">
             <div className="table-row bg-gray-200">
               <div className="table-cell text-xl px-4 py-4">Date</div>
@@ -224,7 +224,7 @@ function PastFlightsTable(props) {
       // Handle table on mobile
       if (width < 1000) {
         return (
-          <div className="table w-full border-collapse border pastFlightsButton cursor-pointer" key="table2_mobile">
+          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile">
             <div className="table-header-group font-bold">
               <div className="table-row bg-accentColor">
                 <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
@@ -244,7 +244,7 @@ function PastFlightsTable(props) {
         );
       } else {
           return (
-            <div className="table w-full border-collapse border pastFlightsButton cursor-pointer" key="table2_desktop">
+            <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop">
               <div className="table-header-group font-bold">
                 <div className="table-row bg-accentColor">
                   <div className="table-cell text-xl px-4 py-4">Date</div>
@@ -274,7 +274,7 @@ function PastFlightsTable(props) {
     } else {
       if (width < 1000) {
         return (
-          <div className="table w-full border-collapse border pastFlightsButton cursor-pointer" key="table2_mobile_hidden">
+          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
           <div className="table-header-group font-bold">
               <div className="table-row bg-gray-200">
                 <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
@@ -285,7 +285,7 @@ function PastFlightsTable(props) {
         )
       } else {
         return (
-          <div className="table w-full border-collapse border pastFlightsButton cursor-pointer" key="table2_desktop_hidden">
+          <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop_hidden">
           <div className="table-header-group font-bold">
             <div className="table-row bg-gray-200">
               <div className="table-cell text-xl px-4 py-4">Date</div>

@@ -596,10 +596,6 @@ video {
   z-index: 40;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1012,10 +1008,6 @@ video {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-12 {
