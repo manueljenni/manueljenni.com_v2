@@ -48,7 +48,7 @@ async function addMarkers() {
 
         // Set current location
         // TODO: Implement proper "current location"
-        if (element.type == 1) {
+        if (element.currentLocation == true) {
             currentLocationLongLat = [element.longitude, element.latitude];
             currentLocationName = element.city + " (" + element.countryCode + ")";
 
