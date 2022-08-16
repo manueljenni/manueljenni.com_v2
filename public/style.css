@@ -1370,9 +1370,9 @@ video {
     padding-bottom: 0px;
   }
 
-  .lg\:py-28 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+  .lg\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .lg\:px-8 {

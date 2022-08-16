@@ -47,7 +47,6 @@ async function addMarkers() {
             .addTo(map);
 
         // Set current location
-        // TODO: Implement proper "current location"
         if (element.currentLocation == true) {
             currentLocationLongLat = [element.longitude, element.latitude];
             currentLocationName = element.city + " (" + element.countryCode + ")";
