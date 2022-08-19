@@ -133,9 +133,11 @@ sub { bottom: -0.15em; vertical-align: sub;}
         filter: drop-shadow(-1em 1em 0px #99cddc);
 
     }
+}
 
-    #hero-image:hover {
-
+@media (max-width: 1024px) {
+    #hero-image {
+        aspect-ratio: 1/1;
     }
 }
 
