@@ -329,6 +329,52 @@ span.underlined {
     white-space: nowrap;
 }
 
+.quote {
+    border-left: 4px solid #86c4d5;
+    padding-left: 25px;
+    
+    width: 100%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+@media (min-width: 1024px) {
+    .quote {
+        width: 50%;
+    }
+}
+
+.quote p {
+    margin: 0px !important;
+}
+
+.quote-text {
+    quotes: '\00AB' '\00BB' '\201E' '\201C';
+    padding-bottom: 10px;
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.75rem !important; /* 28px */
+}
+
+.quote-text::before {
+    content: open-quote;
+}
+
+.quote-text::after {
+    content: close-quote;
+}
+
+.quote-author {
+    margin-left: auto;
+    text-align: left;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+	color: rgb(82 82 82);
+}
+
+.quote-author::before {
+    content: "- ";
+}
+
 /* Buttons */
 
 .button {
