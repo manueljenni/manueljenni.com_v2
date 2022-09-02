@@ -124,6 +124,10 @@ sub { bottom: -0.15em; vertical-align: sub;}
   -webkit-text-fill-color: transparent;
 }
 
+#hero-name::selection {
+    -webkit-text-fill-color: white;
+}
+
 #hero-section {
     height: 75vh;
 } 
