@@ -250,16 +250,13 @@ mark {
     filter: blur(0.0px);
 }
 
-#backgtest {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, -50%);
+#article-content {
+    word-wrap: break-word;
     width: 100%;
-    padding-right: 6rem;
-    padding-left: 6rem;
-}
+    max-width: 900px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+} 
 
 #article-content .article-text {
     padding: 2rem;
@@ -332,16 +329,9 @@ span.underlined {
 .quote {
     border-left: 4px solid #86c4d5;
     padding-left: 25px;
-    
     width: 100%;
     margin-bottom: 1em;
     margin-top: 1em;
-}
-
-@media (min-width: 1024px) {
-    .quote {
-        width: 50%;
-    }
 }
 
 .quote p {
