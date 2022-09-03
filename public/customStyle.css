@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+span {
+    word-wrap: break-word !important;
+}
+
 #mainSection {
     min-height: 92vh !important;
 }
@@ -310,6 +314,33 @@ mark {
 #article-content sub {
     font-size: 1rem;
     line-height: 1.5rem;
+}
+
+.highlight {
+    text-decoration: underline 3px #86CBD5;
+    text-underline-position: under;
+    text-decoration-line: underline;
+    text-decoration-color: #C1E2E8;
+    text-decoration-thickness: 3px;
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-color: #C1E2E8;
+    -webkit-text-decoration-thickness: 3px;
+    font-weight: 600;
+}
+
+#nomad-table {
+    word-wrap: break-word;
+    width: 100% !important;
+    max-width: 900px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.75rem !important; /* 28px */
+    margin-bottom: 2em;
+    background-color: rgb(243 244 246);
+    border-radius: 10px;
+    table-layout: fixed;
+    text-align: center;
 }
 
 #about-image img {
