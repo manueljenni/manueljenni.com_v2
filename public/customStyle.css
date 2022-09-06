@@ -330,7 +330,7 @@ mark {
 
 #nomad-table {
     word-wrap: break-word;
-    width: 100% !important;
+    width: 100%;
     max-width: 900px;
     margin-right: auto !important;
     margin-left: auto !important;
@@ -338,8 +338,13 @@ mark {
     line-height: 1.75rem !important; /* 28px */
     margin-bottom: 2em;
     background-color: rgb(243 244 246);
-    border-radius: 10px;
-    table-layout: fixed;
+    table-layout: fixed !important;
+    padding: 20px;
+}
+
+#nomad-table .table-cell {
+    padding-bottom: 10px;
+    width: 25%;
     text-align: center;
 }
 
