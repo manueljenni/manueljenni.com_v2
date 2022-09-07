@@ -1281,6 +1281,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .md\:flex {
     display: flex;
   }

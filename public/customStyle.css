@@ -233,6 +233,7 @@ mark {
     overflow: hidden;
     margin-left: -5px;
     margin-right: -5px;
+    word-wrap: break-all;
 }
 
 @media (min-width: 769px) {

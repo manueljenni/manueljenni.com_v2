@@ -64,7 +64,7 @@ function writeArticles() {
             <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
                 <!--    TAGS    -->
                 <div class="my-12 space-y-4">
-                    <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-2">{$value->title}</h1>
+                    <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-6 md:mb-4">{$value->title}</h1>
                     <h1 class="text-4xl text-neutral-800 text-center">{$value->subtitle}</h1>
                     <div class="basis-1/2 flex justify-center space-x-4 pt-8">
                         {$tags_html}
