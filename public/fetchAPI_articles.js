@@ -48,7 +48,7 @@ function AllArticles(props) {
             data.map(({image, title, summary, category, link}) => (
               <div key={link} class="hover cursor-pointer" id="article" onClick={() => window.location.href= ('articles/' + link)}>
               <img src={"../img/articles/" + image} alt="" class="rounded-lg mb-4 drop-shadow-md"/>
-              <h1 class="text-3xl mb-1 line-clamp-1">{title}</h1>
+              <h1 class="text-3xl mb-1 line-clamp-2">{title}</h1>
               <p class="text-lg line-clamp-2">{summary}</p>
               </div>
             ))}
