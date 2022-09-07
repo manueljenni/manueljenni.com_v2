@@ -70,9 +70,7 @@ function writeArticles() {
                         {$tags_html}
                     </div>
                 </div>
-                <div class="bg-gray-100 rounded-lg" id="article-content">
-                    {$articleContent}
-                </div>
+                {$articleContent}
             </div>
             <script src="../navbar.js" type="text/babel"></script>
         </body>
