@@ -266,6 +266,10 @@ mark {
     padding: 2rem;
 }
 
+.article-text div h1:first-child {
+    margin-top: 0px !important;
+}
+
 #article-content h1 {
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -344,7 +348,7 @@ mark {
 
 #nomad-table .table-cell {
     padding-bottom: 10px;
-    width: 25%;
+    width: 50%;
     text-align: center;
 }
 
