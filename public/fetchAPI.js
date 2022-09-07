@@ -119,7 +119,7 @@ function TravelArticles(props) {
               <div className="w-3/5 flex items-center">
                   <div className="space-y-3 px-6">
                       <p className="text-sm text-highlightColor-400 uppercase">{category}</p>
-                      <p className="text-2.5xl font-semibold font-medium text-neutral-800 leading-7 line-clamp-2">{title}</p>
+                      <p className="text-2.5xl font-semibold font-medium text-neutral-800 leading-8 line-clamp-2">{title}</p>
                       <p className="text-base leading-5 line-clamp-3">{summary}</p>
                   </div>
               </div>

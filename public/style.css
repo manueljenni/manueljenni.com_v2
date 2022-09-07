@@ -1188,6 +1188,10 @@ video {
   line-height: 1.25rem;
 }
 
+.leading-8 {
+  line-height: 2rem;
+}
+
 .leading-tight {
   line-height: 1.25;
 }
