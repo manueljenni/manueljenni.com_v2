@@ -114,7 +114,7 @@ function TravelArticles(props) {
            }
           {data &&
           data.map(({image, title, summary, category, link}) => (
-              <div key={link} className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover">
+              <div key={link} className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover" onClick={() => window.location.href= ('articles/' + link)}>
               <img className="object-cover rounded-l-lg w-2/5" src={"img/articles/" + image}/>
               <div className="w-3/5 flex items-center">
                   <div className="space-y-3 px-6">
