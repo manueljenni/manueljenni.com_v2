@@ -114,13 +114,13 @@ function TravelArticles(props) {
            }
           {data &&
           data.map(({image, title, summary, category, link}) => (
-              <div key={link} className="bg-white rounded-lg flex h-44 drop-shadow-md cursor-pointer hover" onClick={() => window.location.href= ('articles/' + link)}>
+              <div key={link} className="bg-white rounded-lg flex drop-shadow-md cursor-pointer hover h-fit" onClick={() => window.location.href= ('articles/' + link)}>
               <img className="object-cover rounded-l-lg w-2/5" src={"img/articles/" + image}/>
               <div className="w-3/5 flex items-center">
-                  <div className="space-y-3 px-6">
+                  <div className="space-y-1 md:space-y-3 px-6 py-4">
                       <p className="text-sm text-highlightColor-400 uppercase">{category}</p>
-                      <p className="text-2.5xl font-semibold font-medium text-neutral-800 leading-8 line-clamp-2">{title}</p>
-                      <p className="text-base leading-5 line-clamp-3">{summary}</p>
+                      <p className="text-2xl md:text-2.5xl font-semibold font-medium text-neutral-800 leading-8 md:line-clamp-2 hyphens-auto">{title}</p>
+                      <p className="text-base leading-5 line-clamp-4 md:line-clamp-3">{summary}</p>
                   </div>
               </div>
              </div>
