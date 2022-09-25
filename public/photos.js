@@ -21,6 +21,7 @@ function PhotoGrid(props) {
           );
         }
         let actualData = await response.json();
+        console.log(actualData);
         setData(actualData);
       } catch(err) {
         setData(null);
@@ -40,9 +41,11 @@ function PhotoGrid(props) {
         </div>
       }
       {data &&
-        data.map(photo => {
-          <img src={"/img/" + photo.filename} alt={photo.title}></img>
-        })
+         data.map(photo => (
+          <div>
+            <img src={"/img/" + photo.filename} alt={photo.title} key={photo.filename}></img>
+          </div>
+         ))
       }
       {!data &&
         <div>
