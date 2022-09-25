@@ -164,7 +164,7 @@ root.render(<UpcomingFlightsTable />);
 function parseDate(input_date) {
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Hov", "Dec"
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
   var date = new Date(input_date);
