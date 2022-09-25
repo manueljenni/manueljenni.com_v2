@@ -48,8 +48,13 @@ async function addMarkers() {
 
         // Set current location
         if (element.currentLocation == true) {
+
             currentLocationLongLat = [element.longitude, element.latitude];
             currentLocationName = element.city + " (" + element.countryCode + ")";
+
+            // Center map on current location
+            mapbox_center = currentLocationLongLat;
+            mapZoomAll();
 
             // Only set current location on desktop
             var width = $( window ).width();
@@ -144,7 +149,7 @@ function mapZoomAll() {
     } else {
       // desktop
       map.flyTo({
-        center: [8.5417,47.3769],
+        center: mapbox_center,
         zoom: 1.7,
         speed: 0.5,
         essential: true
