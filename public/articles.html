@@ -25,25 +25,28 @@
 </nav>
 <body>
     <div class="bg-gray-100 pt-12 lg:pt-0" id="mainSection">
-        <div class="mx-4 lg:mx-24 space-y-8 py-12">
-            <div class="flex flex-nowrap justify-between items-center mb-8">
-                <div class="">
-                    <h1 class="text-4xl text-neutral-800 font-semibold">
-                        <mark>Articles</mark>
-                    </h1>
+        <div class="body-content">
+            <div class="mx-4 lg:mx-24 space-y-8 py-12">
+                <div class="flex flex-nowrap justify-between items-center mb-8">
+                    <div class="">
+                        <h1 class="text-4xl text-neutral-800 font-semibold">
+                            <mark>Articles</mark>
+                        </h1>
+                    </div>
+                    <!--
+                    <div class="space-x-4">
+                        <span class="text-lg space-x-12 cursor-pointer button">
+                            <i class="fa-solid fa-filter mr-2"></i>Filter
+                        </span>
+                        <span class="text-lg space-x-12 cursor-pointer button">
+                            <i class="fa-solid fa-sort mr-2"></i>Order
+                        </span>
+                    </div>-->
                 </div>
-                <!--
-                <div class="space-x-4">
-                    <span class="text-lg space-x-12 cursor-pointer button">
-                        <i class="fa-solid fa-filter mr-2"></i>Filter
-                    </span>
-                    <span class="text-lg space-x-12 cursor-pointer button">
-                        <i class="fa-solid fa-sort mr-2"></i>Order
-                    </span>
-                </div>-->
+                <div id="allArticlesGenerated"></div>
             </div>
-            <div id="allArticlesGenerated"></div>
         </div>
+        
     </div>
     <script src="fetchAPI_articles.js" type="text/babel"></script>
     <script src="navbar.js" type="text/babel"></script>

@@ -45,18 +45,20 @@ function writeArticles() {
             <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
             <title>{$value->title}</title>
         </head>
-        <nav class="navbar bg-white z-40">
-            <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../articles.html"><mark>Articles</mark></a></li>
-                <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <nav class="bg-white z-40">
+            <div class="navbar bg-white z-40">
+                <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../articles.html"><mark>Articles</mark></a></li>
+                    <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
         <body>
