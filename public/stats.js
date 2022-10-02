@@ -34,7 +34,7 @@ function Stats(props) {
     }, [])
 
     return (
-        <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-x-6 gap-y-6">
+        <div class="mt-12 grid sd:grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-x-6 gap-y-6">
             {data &&
                 [...data.statsByYear]
                 .sort((a, b) => b.year - a.year)
