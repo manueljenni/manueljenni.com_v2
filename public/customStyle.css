@@ -401,7 +401,7 @@ span.underlined {
 
 .quote-text {
     quotes: '\00AB' '\00BB' '\201E' '\201C';
-    padding-bottom: 10px;
+    padding-bottom: 0.2rem;
     font-size: 1.25rem !important; /* 20px */
     line-height: 1.75rem !important; /* 28px */
 }
