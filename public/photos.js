@@ -41,11 +41,12 @@ function PhotoGrid(props) {
         </div>
       }
       {data &&
-         data.map(photo => (
-          <div>
-            <img src={"/img/" + photo.filename} alt={photo.title} key={photo.filename}></img>
-          </div>
-         ))
+         data
+          .map((photo, index) => (
+            <div key={index}>
+              <img src={"/img/" + photo.filename} alt={photo.title} key={photo.filename}></img>
+            </div>
+          ))
       }
       {!data &&
         <div>
