@@ -1,73 +1,134 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style.css" rel="stylesheet">
-    <link href="../customStyle.css" rel="stylesheet">
-    <link href="../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <title>Kuala Lumpur: First Impression</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="../customStyle.css" rel="stylesheet" />
+  <link
+    href="../node_modules/@fortawesome/fontawesome-free/css/all.css"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>Kuala Lumpur: First Impression</title>
 </head>
 <nav class="navbar bg-white z-40">
-    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
-    <ul class="nav-menu">
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../articles.html"><mark>Articles</mark></a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a></li>
-    </ul>
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+  <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../articles.html"
+        ><mark>Articles</mark></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a>
+    </li>
+  </ul>
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </nav>
 <body>
-    <div class="flex justify-center items-center" id="article-hero-section"><img src="../img/articles/kuala-lumpur-merdeka118.jpg" alt=""></div>
-    <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
-        <!--    TAGS    -->
-        <div class="my-12 space-y-4">
-            <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-6 md:mb-4">Kuala Lumpur: First Impression</h1>
-            <h1 class="text-4xl text-neutral-800 text-center">Some intial thoughts after arriving in KL</h1>
-            <div class="basis-1/2 flex justify-center space-x-4 pt-8">
-                <p class="button text-sm">#kualalumpur</p><p class="button text-sm">#malaysia</p><p class="button text-sm">#travel</p>
-            </div>
-        </div>
-        <div class="bg-gray-100 rounded-lg" id="article-content">
-            <div class="article-text">
-                <h1>Kuala Lumpur: Initial thoughts</h1>
-                <p>I just arrived in Kuala Lumpur, Malaysia and after having explored a few parts of the city, I have to say: I love this place! There are so many different things to do, so many different food options and it's affordable too.</p>
-                <p>KL actually reminds me a lot of Singapore - it's very green, there are parks and trees everywhere. Also, the traffic is not that bad compared to Bangkok, Jakarta etc. Most people I've encountered spoke English very well, which makes connecting with locals a lot easier.</p>
-                <p>Kuala Lumpur also seems to be a lot more diverse than Bangkok; there is no clear division of "local" and "foreigner" here. People here have various cultural backgrounds - Malays, people of Chinese and Indian descent, Westerners and many more.</p>
-                <p>This also makes the food great! Especially for me as a vegetarian, there are tons of Indian options! And just like in any other big city, you can basically find anything you could think of in terms of food. And it's affordable too - for a full Mexican menu I paid about 70 MYR, which is about $15. Street food is even cheaper.</p>
-                <p>Taxis are cheap and easily available too, and there is an extensive public transport network. The city is also pretty walkable - even though no one really seems to walk, it is possible: There are sidewalks (and they're in good shape) and there are a lot of elevated, covered walkways connecting LRT stations, intersections etc.</p>
-                <p>I haven't really seen too much of the city, but I definitely like the general vibe of this place. I could see myself living here too! :)</p>
-                <p>Here are some photos:</p>
-                <img src="../img/articles/kuala-lumpur-merdeka118.jpg" alt="">
-                <sub>Merdeka 118</sub>
-                <div class="sd:flex-col sd:space-x-0 space-y-8 lg:space-y-0 lg:space-x-4 lg:flex article-img">
-                    <div style="flex: calc(4000/6000);">
-                        <img src="../img/articles/kuala-lumpur-petronas-night.JPG" alt="">
-                        <sub>The Petronas Towers at night</sub>
-                    </div>
-                    <div style="flex: calc(4000/6000);">
-                        <img src="../img/articles/kuala-lumpur-saloma-bridge.JPG" alt="">
-                        <sub>Saloma Bridge</sub>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="flex justify-center items-center" id="article-hero-section">
+    <img src="../img/articles/kuala-lumpur-merdeka118.jpg" alt="" />
+  </div>
+  <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
+    <!--    TAGS    -->
+    <div class="my-12 space-y-4">
+      <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-6 md:mb-4">
+        Kuala Lumpur: First Impression
+      </h1>
+      <h1 class="text-4xl text-neutral-800 text-center">
+        Some intial thoughts after arriving in KL
+      </h1>
+      <div class="basis-1/2 flex justify-center space-x-4 pt-8">
+        <p class="button text-sm">#kualalumpur</p>
+        <p class="button text-sm">#malaysia</p>
+        <p class="button text-sm">#travel</p>
+      </div>
     </div>
-    <script src="../navbar.js" type="text/babel"></script>
+    <div class="bg-gray-100 rounded-lg" id="article-content">
+      <div class="article-text">
+        <h1>Kuala Lumpur: Initial thoughts</h1>
+        <p>
+          I just arrived in Kuala Lumpur, Malaysia and after having explored a few parts
+          of the city, I have to say: I love this place! There are so many different
+          things to do, so many different food options and it's affordable too.
+        </p>
+        <p>
+          KL actually reminds me a lot of Singapore - it's very green, there are parks and
+          trees everywhere. Also, the traffic is not that bad compared to Bangkok, Jakarta
+          etc. Most people I've encountered spoke English very well, which makes
+          connecting with locals a lot easier.
+        </p>
+        <p>
+          Kuala Lumpur also seems to be a lot more diverse than Bangkok; there is no clear
+          division of "local" and "foreigner" here. People here have various cultural
+          backgrounds - Malays, people of Chinese and Indian descent, Westerners and many
+          more.
+        </p>
+        <p>
+          This also makes the food great! Especially for me as a vegetarian, there are
+          tons of Indian options! And just like in any other big city, you can basically
+          find anything you could think of in terms of food. And it's affordable too - for
+          a full Mexican menu I paid about 70 MYR, which is about $15. Street food is even
+          cheaper.
+        </p>
+        <p>
+          Taxis are cheap and easily available too, and there is an extensive public
+          transport network. The city is also pretty walkable - even though no one really
+          seems to walk, it is possible: There are sidewalks (and they're in good shape)
+          and there are a lot of elevated, covered walkways connecting LRT stations,
+          intersections etc.
+        </p>
+        <p>
+          I haven't really seen too much of the city, but I definitely like the general
+          vibe of this place. I could see myself living here too! :)
+        </p>
+        <p>Here are some photos:</p>
+        <img src="../img/articles/kuala-lumpur-merdeka118.jpg" alt="" />
+        <imgtitle>Merdeka 118</imgtitle>
+        <div
+          class="sd:flex-col sd:space-x-0 space-y-8 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+          <div style="flex: calc(4000 / 6000)">
+            <img src="../img/articles/kuala-lumpur-petronas-night.JPG" alt="" />
+            <imgtitle>The Petronas Towers at night</imgtitle>
+          </div>
+          <div style="flex: calc(4000 / 6000)">
+            <img src="../img/articles/kuala-lumpur-saloma-bridge.JPG" alt="" />
+            <imgtitle>Saloma Bridge</imgtitle>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../navbar.js" type="text/babel"></script>
 </body>
 
 <footer class="bg-white flex justify-center items-center align-middle h-36">
-    <div class="flex-col md:flex md:justify-between w-full px-4 md:px-12 lg:px-24 space-y-4 text-center">
-        <p class="text-neutral-800">&#169; 2022 Manuel Jenni. All rights reserved.</p>
-        <p class="text-neutral-800 space-x-4">
-            <span class="underlined" onclick="window.open('https://instagram.com/manuelnoahjenni')">Instagram &#8599;&#xFE0E;</span>
-            <span class="underlined" onclick="window.open('https://www.linkedin.com/in/manuel-jenni-525644183/')">LinkedIn &#8599;&#xFE0E;</span>
-        </p>
-    </div>
+  <div
+    class="flex-col md:flex md:justify-between w-full px-4 md:px-12 lg:px-24 space-y-4 text-center">
+    <p class="text-neutral-800">&#169; 2022 Manuel Jenni. All rights reserved.</p>
+    <p class="text-neutral-800 space-x-4">
+      <span
+        class="underlined"
+        onclick="window.open('https://instagram.com/manuelnoahjenni')"
+        >Instagram &#8599;&#xFE0E;</span
+      >
+      <span
+        class="underlined"
+        onclick="window.open('https://www.linkedin.com/in/manuel-jenni-525644183/')"
+        >LinkedIn &#8599;&#xFE0E;</span
+      >
+    </p>
+  </div>
 </footer>
