@@ -291,7 +291,7 @@ mark {
 #article-content {
     word-wrap: break-word;
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin-right: auto !important;
     margin-left: auto !important;
 }
