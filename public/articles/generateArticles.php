@@ -31,7 +31,7 @@ function writeArticles() {
         }
 
         $filename = $value->link . ".html";
-        $file = fopen($filename, "w") or die("Cant open file Error file");
+        $file = fopen($filename, "w") or continue;
         $articleContent = html_entity_decode($value->content);
         $fileContent = <<<EOT
         <!DOCTYPE html>
