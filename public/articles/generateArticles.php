@@ -90,9 +90,12 @@ function writeArticles() {
 
 
             fwrite($file, $fileContent);
+            print($filename);
 
         
     }
+
+
 }
 
 writeArticles();
