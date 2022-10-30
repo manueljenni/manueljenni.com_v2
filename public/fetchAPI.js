@@ -48,7 +48,7 @@ function FeaturedArticles(props) {
               </div>
            }
           {data &&
-          data.map(({image, title, summary, category, link}) => (
+          data.reverse().map(({image, title, summary, category, link}) => (
               <div key={link} className="bg-white rounded-lg flex drop-shadow-md cursor-pointer hover h-fit max-h-72" onClick={() => window.location.href= ('articles/' + link)}>
               <img className="hidden md:block md:w-2/5 object-cover rounded-l-lg" src={"img/articles/" + image}/>
               <div className="w-full md:w-3/5 md:flex items-center">
@@ -113,7 +113,7 @@ function TravelArticles(props) {
               </div>
            }
           {data &&
-          data.map(({image, title, summary, category, link}) => (
+          data.reverse().map(({image, title, summary, category, link}) => (
               <div key={link} className="bg-white rounded-lg flex drop-shadow-md cursor-pointer hover h-fit" onClick={() => window.location.href= ('articles/' + link)}>
               <img className="hidden md:block md:w-2/5 object-cover rounded-l-lg" src={"img/articles/" + image}/>
               <div className="w-full md:w-3/5 md:flex items-center">
