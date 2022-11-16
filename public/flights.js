@@ -39,7 +39,7 @@ function UpcomingFlightsTable(props) {
   // Show / hide table when button is pressed
   var toggleButton = document.getElementsByClassName("upcomingFlightsButton");
   Array.from(toggleButton).forEach(element => {
-    element.addEventListener("click", function() {
+    element.addEventListener("click", function () {
       if (showUpcomingTable == true) {
         element.querySelector('span').innerHTML = "Show";
         setUpcomingTable(false);
@@ -51,96 +51,96 @@ function UpcomingFlightsTable(props) {
   });
 
   useEffect(() => {
-      const getData = async () => {
-        try {
-          const response = await fetch(
-              'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights'
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights'
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
           );
-          if (!response.ok) {
-            throw new Error(
-              `This is an HTTP error: The status is ${response.status}`
-            );
-          }
-          let actualData = await response.json();
-          setData(actualData);
-          console.log(actualData);
-          setError(null);
-        } catch(err) {
-          setError(err.message);
-          setData(null);
-        } finally {
-          setLoading(false);
-        }  
+        }
+        let actualData = await response.json();
+        setData(actualData);
+        console.log(actualData);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
       }
-      getData()
+    }
+    getData()
 
-    }, [])
+  }, [])
 
-    if (showUpcomingTable == true) {
-      if (width < 1000) {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table1_mobile">
-            <div className="table-header-group font-bold">
-              <div className="table-row bg-accentColor">
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
-              </div>
-            </div>
-            <div className="table-row-group">
-            {data &&
-                data.map(flight => (
-                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                </div>
-                ))}
+  if (showUpcomingTable == true) {
+    if (width < 1000) {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table1_mobile">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
             </div>
           </div>
-        );
-      } else {
-          return (
-            <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop">
-              <div className="table-header-group font-bold">
-                <div className="table-row bg-accentColor">
-                  <div className="table-cell text-xl px-4 py-4">Date</div>
-                  <div className="table-cell text-xl px-4 py-4">Origin</div>
-                  <div className="table-cell text-xl px-4 py-4">Destination</div>
-                  <div className="table-cell text-xl px-4 py-4">Airline</div>
-                  <div className="table-cell text-xl px-4 py-4">Distance</div>
-                  <div className="table-cell text-xl px-4 py-4">Duration</div>
-                </div>
-              </div>
-              <div className="table-row-group">
-              {data &&
-                data.map(flight => (
+          <div className="table-row-group">
+            {data &&
+              data.map(flight => (
                 <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                  <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
-                  <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
-                  <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br/><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br /><b>{flight.departure.city}</b><br />({flight.departure.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br /><b>{flight.arrival.city}</b><br />({flight.arrival.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                </div>
+              ))}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4">Date</div>
+              <div className="table-cell text-xl px-4 py-4">Origin</div>
+              <div className="table-cell text-xl px-4 py-4">Destination</div>
+              <div className="table-cell text-xl px-4 py-4">Airline</div>
+              <div className="table-cell text-xl px-4 py-4">Distance</div>
+              <div className="table-cell text-xl px-4 py-4">Duration</div>
+            </div>
+          </div>
+          <div className="table-row-group">
+            {data &&
+              data.map(flight => (
+                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br /><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br /><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
+                  <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br /><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
+                  <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br /><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br /><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
                   <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.duration / 3600) * 100) / 100} h</div>
                 </div>
-                ))}
-              </div>
-            </div>
-          );
-      }
-    } else {
-      if (width < 1000) {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
-          <div className="table-header-group font-bold">
-              <div className="table-row bg-gray-200">
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
-              </div>
-            </div>
+              ))}
+          </div>
         </div>
-        )
-      } else {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop_hidden">
+      );
+    }
+  } else {
+    if (width < 1000) {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-gray-200">
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table1_desktop_hidden">
           <div className="table-header-group font-bold">
             <div className="table-row bg-gray-200">
               <div className="table-cell text-xl px-4 py-4">Date</div>
@@ -152,9 +152,9 @@ function UpcomingFlightsTable(props) {
             </div>
           </div>
         </div>
-        )
-      } 
+      )
     }
+  }
 }
 
 const domContainer = document.querySelector('#upcomingFlightsTable');
@@ -164,7 +164,7 @@ root.render(<UpcomingFlightsTable />);
 function parseDate(input_date) {
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
   var date = new Date(input_date);
@@ -184,7 +184,7 @@ function PastFlightsTable(props) {
   // Show / hide table when button is pressed
   var pastToggleButton = document.getElementsByClassName("pastFlightsButton");
   Array.from(pastToggleButton).forEach(element => {
-    element.addEventListener("click", function() {
+    element.addEventListener("click", function () {
       if (showTable == true) {
         element.querySelector('span').innerHTML = "Show";
         setShowTable(false);
@@ -196,96 +196,96 @@ function PastFlightsTable(props) {
   });
 
   useEffect(() => {
-      const getData = async () => {
-        try {
-          const response = await fetch(
-            'https://damp-atoll-27311.herokuapp.com/api/flights/getAllPastFlights'
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          'https://damp-atoll-27311.herokuapp.com/api/flights/getAllPastFlights'
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
           );
-          if (!response.ok) {
-            throw new Error(
-              `This is an HTTP error: The status is ${response.status}`
-            );
-          }
-          let actualData = await response.json();
-          setData(actualData);
-          setError(null);
-        } catch(err) {
-          setError(err.message);
-          setData(null);
-        } finally {
-          setLoading(false);
-        }  
+        }
+        let actualData = await response.json();
+        setData(actualData);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
       }
-      getData()
+    }
+    getData()
 
-    }, [])
+  }, [])
 
-    if (showTable == true) {
-      // Handle table on mobile
-      if (width < 1000) {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile">
-            <div className="table-header-group font-bold">
-              <div className="table-row bg-accentColor">
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
-              </div>
-            </div>
-            <div className="table-row-group">
-            {data &&
-                data.map(flight => (
-                  <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                </div>
-                ))}
+  if (showTable == true) {
+    // Handle table on mobile
+    if (width < 1000) {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
             </div>
           </div>
-        );
-      } else {
-          return (
-            <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop">
-              <div className="table-header-group font-bold">
-                <div className="table-row bg-accentColor">
-                  <div className="table-cell text-xl px-4 py-4">Date</div>
-                  <div className="table-cell text-xl px-4 py-4">Origin</div>
-                  <div className="table-cell text-xl px-4 py-4">Destination</div>
-                  <div className="table-cell text-xl px-4 py-4">Airline</div>
-                  <div className="table-cell text-xl px-4 py-4">Distance</div>
-                  <div className="table-cell text-xl px-4 py-4">Duration</div>
-                </div>
-              </div>
-              <div className="table-row-group">
-              {data && 
-                data.map(flight => (
+          <div className="table-row-group">
+            {data &&
+              data.map(flight => (
                 <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                  <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
-                  <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
-                  <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
-                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br/><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br /><b>{flight.departure.city}</b><br />({flight.departure.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br /><b>{flight.arrival.city}</b><br />({flight.arrival.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                </div>
+              ))}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-accentColor">
+              <div className="table-cell text-xl px-4 py-4">Date</div>
+              <div className="table-cell text-xl px-4 py-4">Origin</div>
+              <div className="table-cell text-xl px-4 py-4">Destination</div>
+              <div className="table-cell text-xl px-4 py-4">Airline</div>
+              <div className="table-cell text-xl px-4 py-4">Distance</div>
+              <div className="table-cell text-xl px-4 py-4">Duration</div>
+            </div>
+          </div>
+          <div className="table-row-group">
+            {data &&
+              data.map(flight => (
+                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br /><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                  <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br /><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
+                  <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br /><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
+                  <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br /><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
+                  <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br /><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
                   <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.duration / 3600) * 100) / 100} h</div>
                 </div>
-                ))}
-              </div>
-            </div>
-          );
-      }
-    } else {
-      if (width < 1000) {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
-          <div className="table-header-group font-bold">
-              <div className="table-row bg-gray-200">
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
-                <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
-              </div>
-            </div>
+              ))}
+          </div>
         </div>
-        )
-      } else {
-        return (
-          <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop_hidden">
+      );
+    }
+  } else {
+    if (width < 1000) {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table2_mobile_hidden">
+          <div className="table-header-group font-bold">
+            <div className="table-row bg-gray-200">
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
+              <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="table w-full border-collapse border cursor-pointer" key="table2_desktop_hidden">
           <div className="table-header-group font-bold">
             <div className="table-row bg-gray-200">
               <div className="table-cell text-xl px-4 py-4">Date</div>
@@ -297,9 +297,9 @@ function PastFlightsTable(props) {
             </div>
           </div>
         </div>
-        ) 
-      }      
+      )
     }
+  }
 }
 
 const domContainer2 = document.querySelector('#pastFlightsTable');
@@ -309,7 +309,7 @@ root2.render(<PastFlightsTable />);
 function parseDate(input_date) {
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
   var date = new Date(input_date);
@@ -319,14 +319,14 @@ function parseDate(input_date) {
 
 function getHoursOfDateFormatted(input_date) {
   var date = new Date(input_date);
-  return date.getHours().toString().padStart(2,'0') + ':' + date.getMinutes().toString().padStart(2,'0');
+  return date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0');
 }
 
 function getDepartureArrivalTime(start_date, end_date) {
   var start = new Date(start_date);
   var end = new Date(end_date);
 
-  
+
   var startDate = new Date(start).setHours(0, 0, 0, 0);
   var endDate = new Date(end).setHours(0, 0, 0, 0);
 
@@ -354,79 +354,79 @@ function FlightsByTripTable(props) {
   tripId = '';
 
   useEffect(() => {
-      const getData = async () => {
-        try {
-          const response = await fetch(
-              'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights' + tripId
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          'https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights' + tripId
+        );
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
           );
-          if (!response.ok) {
-            throw new Error(
-              `This is an HTTP error: The status is ${response.status}`
-            );
-          }
-          let actualData = await response.json();
-          setData(actualData);
-          console.log(actualData);
-          setError(null);
-        } catch(err) {
-          setError(err.message);
-          setData(null);
-        } finally {
-          setLoading(false);
-        }  
+        }
+        let actualData = await response.json();
+        setData(actualData);
+        console.log(actualData);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
       }
-      getData()
+    }
+    getData()
 
-    }, [])
+  }, [])
 
-    if (width < 1000) {
-      return (
-        <div className="table w-full border-collapse border" key="table1">
-          <div className="table-header-group font-bold">
-            <div className="table-row bg-accentColor">
-              <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
-              <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
-            </div>
-          </div>
-          <div className="table-row-group">
-          {data &&
-              data.map(flight => (
-                <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
-                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br/><b>{flight.departure.city}</b><br/>({flight.departure.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br/><b>{flight.arrival.city}</b><br/>({flight.arrival.iata})<br/><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-              </div>
-              ))}
+  if (width < 1000) {
+    return (
+      <div className="table w-full border-collapse border" key="table1">
+        <div className="table-header-group font-bold">
+          <div className="table-row bg-accentColor">
+            <div className="table-cell text-xl px-4 py-4 w-1/2">Origin</div>
+            <div className="table-cell text-xl px-4 py-4 w-1/2">Destination</div>
           </div>
         </div>
-      );
-    } else {
-        return (
-          <div className="table w-full border-collapse border" key="table1">
-            <div className="table-header-group font-bold">
-              <div className="table-row bg-accentColor">
-                <div className="table-cell text-xl px-4 py-4">Date</div>
-                <div className="table-cell text-xl px-4 py-4">Origin</div>
-                <div className="table-cell text-xl px-4 py-4">Destination</div>
-                <div className="table-cell text-xl px-4 py-4">Airline</div>
-                <div className="table-cell text-xl px-4 py-4">Distance</div>
-                <div className="table-cell text-xl px-4 py-4">Duration</div>
+        <div className="table-row-group">
+          {data &&
+            data.map(flight => (
+              <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200 hover:bg-accentColorHover hover:cursor-pointer" onClick={() => fitBounds([flight.departure.longitude, flight.departure.latitude], [flight.arrival.longitude, flight.arrival.latitude])}>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.departureTime)}</span><br /><b>{flight.departure.city}</b><br />({flight.departure.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{parseDate(flight.arrivalTime)}</span><br /><b>{flight.arrival.city}</b><br />({flight.arrival.iata})<br /><span className="text-base text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
               </div>
-            </div>
-            <div className="table-row-group">
-            {data &&
-              data.map(flight => (
+            ))}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="table w-full border-collapse border" key="table1">
+        <div className="table-header-group font-bold">
+          <div className="table-row bg-accentColor">
+            <div className="table-cell text-xl px-4 py-4">Date</div>
+            <div className="table-cell text-xl px-4 py-4">Origin</div>
+            <div className="table-cell text-xl px-4 py-4">Destination</div>
+            <div className="table-cell text-xl px-4 py-4">Airline</div>
+            <div className="table-cell text-xl px-4 py-4">Distance</div>
+            <div className="table-cell text-xl px-4 py-4">Duration</div>
+          </div>
+        </div>
+        <div className="table-row-group">
+          {data &&
+            data.map(flight => (
               <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row even:bg-gray-200">
-                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br/><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br/><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
-                <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br/><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
-                <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br/><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
-                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br/><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
+                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{parseDate(flight.departureTime)}<br /><span className="text-lg text-gray-400">{getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                <div className="table-cell text-xl px-4 py-4"><b>{flight.departure.city}</b> ({flight.departure.iata})<br /><p className="text-lg text-gray-400">{flight.departure.countryName}</p></div>
+                <div className="table-cell text-xl px-4 py-4"><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br /><p className="text-lg text-gray-400">{flight.arrival.countryName}</p></div>
+                <div className="table-cell text-xl px-4 py-4">{flight.airline.name}<br /><p className="text-lg text-gray-400">{flight.airline.code} {flight.flightNumber}</p></div>
+                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.miles * 1.852))} km<br /><p className="text-lg text-gray-400">{flight.miles} nmi</p></div>
                 <div className="table-cell text-xl px-4 py-4 whitespace-nowrap">{Math.round((flight.duration / 3600) * 100) / 100} h</div>
               </div>
-              ))}
-            </div>
-          </div>
-        );
-    }
+            ))}
+        </div>
+      </div>
+    );
+  }
 }
 
