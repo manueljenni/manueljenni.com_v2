@@ -1,172 +1,272 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style.css" rel="stylesheet">
-    <link href="../customStyle.css" rel="stylesheet">
-    <link href="../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <title>Nomad Review: Singapore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="../customStyle.css" rel="stylesheet" />
+  <link
+    href="../node_modules/@fortawesome/fontawesome-free/css/all.css"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>Nomad Review: Singapore</title>
 </head>
 <nav class="navbar bg-white z-40">
-    <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
-    <ul class="nav-menu">
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../articles.html"><mark>Articles</mark></a></li>
-        <li class="nav-item"><a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a></li>
-    </ul>
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+  <a href="#" class="nav-branding text-xl">Manuel N. Jenni</a>
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../articles.html"
+        ><mark>Articles</mark></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-xl text-neutral-800" href="../travel.html">Travel</a>
+    </li>
+  </ul>
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </nav>
 <body>
-    <div class="flex justify-center items-center" id="article-hero-section"><img src="../img/articles/singapore-nomad-review.jpg" alt=""></div>
-    <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
-        <!--    TAGS    -->
-        <div class="my-12 space-y-4">
-            <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-6 md:mb-4">Nomad Review: Singapore</h1>
-            <h1 class="text-4xl text-neutral-800 text-center">Singapore for Digital Nomads</h1>
-            <div class="basis-1/2 flex justify-center space-x-4 pt-8">
-                <p class="button text-sm">#singapore</p><p class="button text-sm">#digitalnomad</p><p class="button text-sm">#travel</p>
-            </div>
-        </div>
-        <div id="nomad-table">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 w-full text-center">
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Monthly budget</b></p>
-                    <p class="w-1/2">$ 4000</p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Average rent</b></p>
-                    <p class="w-1/2">$ 1500 - 2000</p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Best neighborhood</b></p>
-                    <p class="w-1/2">Downtown</p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Weather</b></p>
-                    <p class="w-1/2">&#129397; &#127774; &#127783;</p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Activities & fun</b></p>
-                    <p class="w-1/2 icons">
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-gray-300"></i>
-                        <i class="fas fa-star text-gray-300"></i>
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Quality of life</b></p>
-                    <p class="w-1/2 icons">
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>English level</b></p>
-                    <p class="w-1/2 icons">
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <p class="w-1/2"><b>Nomad community</b></p>
-                    <p class="w-1/2 icons">
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <i class="fas fa-star text-gray-300"></i>
-                        <i class="fas fa-star text-gray-300"></i>
-                        <i class="fas fa-star text-gray-300"></i>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-gray-100 rounded-lg" id="article-content">
-            <div class="article-text">
-                <div>
-                    <p>
-                    Singapore is a prosperous but tiny city state in South East Asia - it has overtaken Hong Kong to become Asia's top financial centre. Singapore is also one of the most diverse countries: Around 75% of Singaporeans are of Chinese descent, but there are also big Malay, Indian and Western communities. It's hot all year around with lots of rain during the summer months. 
-                    </p>
-                    <p>But how's Singapore for digital nomads? This is a short guide of the pros and cons of being a nomad in Singapore. Enjoy! :)</p>
-                    <div class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
-                        <div style="flex: calc(3024/4032);">
-                            <img src="../img/articles/marina_bay_sands_front_water.JPG" alt="">
-                            <sub>Marina Bay Sands (front view)</sub>
-                        </div>
-                        <div style="flex: calc(3024/4032);">
-                            <img src="../img/articles/gardens_by_the_bay_waterfall.JPG" alt="">
-                            <sub>Waterfall at the Gardens by the Bay</sub>
-                        </div>
-                    </div>
-                    <h1>Living expenses</h1>
-                    <p>One of the most important factors of "nomad destinations" is obviously the cost of living. Unfortunately, Singaore does not do well in this category - it's extremely expensive! A big part of that is housing - you should expect to pay at least <span class="highlight">$1500 per month</span> for a studio or small one bedroom apartment. Rent in Singapore is comparable to cities like New York, Zurich and San Francisco!</p>
-                    <p>Food & transport is generally more affordable. You can get decent street food at a hawker stall (Singapore's famous food courts) for less than $10. Transport is pretty cheap too - a ride on the amazing metro network is only around $2. Taxis (like Grab, Gojek etc.) are more expensive than in countries like Thailand, but still cheaper than e.g. Uber in the US. A ride from the airport to downtown is around 15$, depending on the time. <span class="highlight">Warning: It's extremely hard to get a taxi (Grab) in the evening!</span> Do not rely on taxis to get back home after a long night out (I've waited two hours for a taxi in downtown at 2am!). </p>
-                    <h1>Nomad lifestyle</h1>
-                    <p>My favourite part about Singapore was that I fit in! Singapore has a <span class="highlight">big expat community</span>, so nobody bats an eye at a white person walking around. Also, pretty much everyone speaks English, so you'll fit in perfectly.</p>
-                    <p>There isn't as big of a nomad community like in "nomad hotspots" like Chiang Mai or Bali - but there are plenty of cool coworking spaces (lots of WeWork, and some "boutique" ones too) to make friends at. And again, it's really easy to connect with locals because everyone speaks English.</p>
-                    <div class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
-                        <div style="flex: calc(2499/1666);">
-                            <img src="../img/articles/wework_singapore_1.jpeg" alt="">
-                            <sub>WeWork in Singapore</sub>
-                        </div>
-                        <div style="flex: calc(2500/1875);">
-                            <img src="../img/articles/wework_singapore_2.jpeg" alt="">
-                        </div>
-                    </div>
-                    <p>If you work online like me, you've got nothing to worry about. The WiFi is fast and reliable, and there is free WiFi basically everywhere. Mobile data is affordable too.</p>
-                    <h1>Quality of life & fun</h1>
-                    <p>How is life in Singapore like outside work? There are a lot of things to do and see in Singapore - for example, the Gardens by the Bay, all the different sections of town (Little India, Orchard, Arab Town, Chinatown etc.), outskirts of town, or you could even do a quick trip to Johor Bahru in Malaysia. Singapore is also very green - so if you're into cycling, running or anything like that, there are a lot of opportunities. There are also some nice beaches on Sentosa Island to relax on.</p>
-                    <div class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
-                        <div style="flex: calc(3024/4032);">
-                            <img src="../img/articles/marina_bay_sands_back_green.JPG" alt="">
-                            <sub>Marina Bay Sands (back view)</sub>
-                        </div>
-                        <div style="flex: calc(3024/4032);">
-                            <img src="../img/articles/gardens_by_the_bay_waterfall.JPG" alt="">
-                            <sub>Waterfall at the Gardens by the Bay</sub>
-                        </div>
-                    </div>
-                    <p>Singapore's party scene is alright - there are <span class="highlight">a few cool clubs with big parties on the weekends.</span> They are expensive, the music is okay and you'll see a lot of locals that had too much to drink ;-). But if you're looking to go to a different (and good) club every night, Singaore is not the place for you. It's pretty small after all!</p>
-                    <p>That's also Singapore's biggest drawback: Just that it's small! There isn't all that much to do after you've seen the big attractions. <span class="highlight">It can get boring quickly.</span> I think Singapore is a good nomad spot for a few weeks, but not too much longer.</p>
-                    <div class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
-                        <div style="flex: calc(1400/1000);">
-                            <img src="../img/articles/singapore_sentosa.webp" alt="">
-                            <sub>Sentosa</sub>
-                        </div>
-                        <div style="flex: calc(645/430);">
-                            <img src="../img/articles/singapore_mosque.png" alt="">
-                            <sub>Sultan Mosque</sub>
-                        </div>
-                    </div>
-                    <h1>Conclusion</h1>
-                    <p>Singapore is a great city that is definitely worth visiting. However, the horrendous prices (especially for rent) and the limited amount of things to do make it more suitable for a shorter stay. Other cities in Asia (like Bangkok) offer more at a lower cost.</p>
-                </div>
-            </div>
-        </div>
+  <div class="flex justify-center items-center" id="article-hero-section">
+    <img src="../img/articles/singapore-nomad-review.jpg" alt="" />
+  </div>
+  <div class="bg-white p-y-8 space-y-0 lg:gap-8 lg:justify-center mx-4 lg:mx-24">
+    <!--    TAGS    -->
+    <div class="my-12 space-y-4">
+      <h1 class="text-5xl text-neutral-800 text-center font-semibold mb-6 md:mb-4">
+        Nomad Review: Singapore
+      </h1>
+      <h1 class="text-4xl text-neutral-800 text-center">Singapore for Digital Nomads</h1>
+      <div class="basis-1/2 flex justify-center space-x-4 pt-8">
+        <p class="button text-sm">#singapore</p>
+        <p class="button text-sm">#digitalnomad</p>
+        <p class="button text-sm">#travel</p>
+      </div>
     </div>
-    <script src="../navbar.js" type="text/babel"></script>
+    <div id="nomad-table">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 w-full text-center">
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Monthly budget</b></p>
+          <p class="w-1/2">$ 4000</p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Average rent</b></p>
+          <p class="w-1/2">$ 1500 - 2000</p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Best neighborhood</b></p>
+          <p class="w-1/2">Downtown</p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Weather</b></p>
+          <p class="w-1/2">&#129397; &#127774; &#127783;</p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Activities & fun</b></p>
+          <p class="w-1/2 icons">
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-gray-300"></i>
+            <i class="fas fa-star text-gray-300"></i>
+          </p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Quality of life</b></p>
+          <p class="w-1/2 icons">
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+          </p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>English level</b></p>
+          <p class="w-1/2 icons">
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+          </p>
+        </div>
+        <div class="flex items-center">
+          <p class="w-1/2"><b>Nomad community</b></p>
+          <p class="w-1/2 icons">
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-yellow-500"></i>
+            <i class="fas fa-star text-gray-300"></i>
+            <i class="fas fa-star text-gray-300"></i>
+            <i class="fas fa-star text-gray-300"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-100 rounded-lg" id="article-content">
+      <div class="article-text">
+        <div>
+          <p>
+            Singapore is a prosperous but tiny city state in South East Asia - it has
+            overtaken Hong Kong to become Asia's top financial centre. Singapore is also
+            one of the most diverse countries: Around 75% of Singaporeans are of Chinese
+            descent, but there are also big Malay, Indian and Western communities. It's
+            hot all year around with lots of rain during the summer months.
+          </p>
+          <p>
+            But how's Singapore for digital nomads? This is a short guide of the pros and
+            cons of being a nomad in Singapore. Enjoy! :)
+          </p>
+          <div
+            class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+            <div style="flex: calc(3024 / 4032)">
+              <img src="../img/articles/marina_bay_sands_front_water.JPG" alt="" />
+              <imgtitle>Marina Bay Sands (front view)</imgtitle>
+            </div>
+            <div style="flex: calc(3024 / 4032)">
+              <img src="../img/articles/gardens_by_the_bay_waterfall.JPG" alt="" />
+              <imgtitle>Waterfall at the Gardens by the Bay</imgtitle>
+            </div>
+          </div>
+          <h1>Living expenses</h1>
+          <p>
+            One of the most important factors of "nomad destinations" is obviously the
+            cost of living. Unfortunately, Singaore does not do well in this category -
+            it's extremely expensive! A big part of that is housing - you should expect to
+            pay at least <span class="highlight">$1500 per month</span> for a studio or
+            small one bedroom apartment. Rent in Singapore is comparable to cities like
+            New York, Zurich and San Francisco!
+          </p>
+          <p>
+            Food & transport is generally more affordable. You can get decent street food
+            at a hawker stall (Singapore's famous food courts) for less than $10.
+            Transport is pretty cheap too - a ride on the amazing metro network is only
+            around $2. Taxis (like Grab, Gojek etc.) are more expensive than in countries
+            like Thailand, but still cheaper than e.g. Uber in the US. A ride from the
+            airport to downtown is around 15$, depending on the time.
+            <span class="highlight"
+              >Warning: It's extremely hard to get a taxi (Grab) in the evening!</span
+            >
+            Do not rely on taxis to get back home after a long night out (I've waited two
+            hours for a taxi in downtown at 2am!).
+          </p>
+          <h1>Nomad lifestyle</h1>
+          <p>
+            My favourite part about Singapore was that I fit in! Singapore has a
+            <span class="highlight">big expat community</span>, so nobody bats an eye at a
+            white person walking around. Also, pretty much everyone speaks English, so
+            you'll fit in perfectly.
+          </p>
+          <p>
+            There isn't as big of a nomad community like in "nomad hotspots" like Chiang
+            Mai or Bali - but there are plenty of cool coworking spaces (lots of WeWork,
+            and some "boutique" ones too) to make friends at. And again, it's really easy
+            to connect with locals because everyone speaks English.
+          </p>
+          <div
+            class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+            <div style="flex: calc(2499 / 1666)">
+              <img src="../img/articles/wework_singapore_1.jpeg" alt="" />
+              <imgtitle>WeWork in Singapore</imgtitle>
+            </div>
+            <div style="flex: calc(2500 / 1875)">
+              <img src="../img/articles/wework_singapore_2.jpeg" alt="" />
+            </div>
+          </div>
+          <p>
+            If you work online like me, you've got nothing to worry about. The WiFi is
+            fast and reliable, and there is free WiFi basically everywhere. Mobile data is
+            affordable too.
+          </p>
+          <h1>Quality of life & fun</h1>
+          <p>
+            How is life in Singapore like outside work? There are a lot of things to do
+            and see in Singapore - for example, the Gardens by the Bay, all the different
+            sections of town (Little India, Orchard, Arab Town, Chinatown etc.), outskirts
+            of town, or you could even do a quick trip to Johor Bahru in Malaysia.
+            Singapore is also very green - so if you're into cycling, running or anything
+            like that, there are a lot of opportunities. There are also some nice beaches
+            on Sentosa Island to relax on.
+          </p>
+          <div
+            class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+            <div style="flex: calc(3024 / 4032)">
+              <img src="../img/articles/marina_bay_sands_back_green.JPG" alt="" />
+              <imgtitle>Marina Bay Sands (back view)</imgtitle>
+            </div>
+            <div style="flex: calc(3024 / 4032)">
+              <img src="../img/articles/gardens_by_the_bay_waterfall.JPG" alt="" />
+              <imgtitle>Waterfall at the Gardens by the Bay</imgtitle>
+            </div>
+          </div>
+          <p>
+            Singapore's party scene is alright - there are
+            <span class="highlight"
+              >a few cool clubs with big parties on the weekends.</span
+            >
+            They are expensive, the music is okay and you'll see a lot of locals that had
+            too much to drink ;-). But if you're looking to go to a different (and good)
+            club every night, Singaore is not the place for you. It's pretty small after
+            all!
+          </p>
+          <p>
+            That's also Singapore's biggest drawback: Just that it's small! There isn't
+            all that much to do after you've seen the big attractions.
+            <span class="highlight">It can get boring quickly.</span> I think Singapore is
+            a good nomad spot for a few weeks, but not too much longer.
+          </p>
+          <div
+            class="sd:flex-col sd:space-x-0 space-y-12 lg:space-y-0 lg:space-x-4 lg:flex article-img">
+            <div style="flex: calc(1400 / 1000)">
+              <img src="../img/articles/singapore_sentosa.webp" alt="" />
+              <imgtitle>Sentosa</imgtitle>
+            </div>
+            <div style="flex: calc(645 / 430)">
+              <img src="../img/articles/singapore_mosque.png" alt="" />
+              <imgtitle>Sultan Mosque</imgtitle>
+            </div>
+          </div>
+          <h1>Conclusion</h1>
+          <p>
+            Singapore is a great city that is definitely worth visiting. However, the
+            horrendous prices (especially for rent) and the limited amount of things to do
+            make it more suitable for a shorter stay. Other cities in Asia (like Bangkok)
+            offer more at a lower cost.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../navbar.js" type="text/babel"></script>
 </body>
 
 <footer class="bg-white flex justify-center items-center align-middle h-36">
-    <div class="flex-col md:flex md:justify-between w-full px-4 md:px-12 lg:px-24 space-y-4 text-center">
-        <p class="text-neutral-800">&#169; 2022 Manuel Jenni. All rights reserved.</p>
-        <p class="text-neutral-800 space-x-4">
-            <span class="underlined" onclick="window.open('https://instagram.com/manuelnoahjenni')">Instagram &#8599;&#xFE0E;</span>
-            <span class="underlined" onclick="window.open('https://www.linkedin.com/in/manuel-jenni-525644183/')">LinkedIn &#8599;&#xFE0E;</span>
-        </p>
-    </div>
+  <div
+    class="flex-col md:flex md:justify-between w-full px-4 md:px-12 lg:px-24 space-y-4 text-center">
+    <p class="text-neutral-800">&#169; 2022 Manuel Jenni. All rights reserved.</p>
+    <p class="text-neutral-800 space-x-4">
+      <span
+        class="underlined"
+        onclick="window.open('https://instagram.com/manuelnoahjenni')"
+        >Instagram &#8599;&#xFE0E;</span
+      >
+      <span
+        class="underlined"
+        onclick="window.open('https://www.linkedin.com/in/manuel-jenni-525644183/')"
+        >LinkedIn &#8599;&#xFE0E;</span
+      >
+    </p>
+  </div>
 </footer>
