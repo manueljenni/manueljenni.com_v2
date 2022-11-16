@@ -23,11 +23,11 @@ function PhotoGrid(props) {
         let actualData = await response.json();
         console.log(actualData);
         setData(actualData);
-      } catch(err) {
+      } catch (err) {
         setData(null);
       } finally {
         setLoading(false);
-      }  
+      }
     }
     getData()
 
@@ -37,11 +37,11 @@ function PhotoGrid(props) {
     <div className="columns-1 md:columns-2 lg:columns-3 gap-0">
       {loading &&
         <div>
-            <p>Loading...</p>
+          <p>Loading...</p>
         </div>
       }
       {data &&
-         data
+        data
           .map((photo, index) => (
             <div key={index}>
               <img src={"/img/" + photo.filename} alt={photo.title} key={photo.filename}></img>
@@ -50,10 +50,10 @@ function PhotoGrid(props) {
       }
       {!data &&
         <div>
-            <p>No photos found :(</p>
+          <p>No photos found :(</p>
         </div>
       }
-      
+
     </div>
   )
 }
