@@ -429,4 +429,3 @@ function FlightsByTripTable(props) {
     );
   }
 }
-
